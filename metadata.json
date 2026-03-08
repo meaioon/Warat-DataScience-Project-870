@@ -1,0 +1,5 @@
+{
+  "name": "ภาพรวมการดำเนินงานเที่ยวบินของบริษัท วิทยุการบินแห่งประเทศไทย จำกัด",
+  "description": "A comprehensive dashboard for Aeronautical Flight Data in Thailand, featuring flight rules, types, and operational statistics.",
+  "requestFramePermissions": []
+}
