@@ -1,0 +1,1289 @@
+[
+  {
+    "province": "สมุทรปราการ",
+    "district": "บางพลี",
+    "name": "BKK",
+    "icao": "VTBS",
+    "iata": "ท่าอากาศยานสุวรรณภูมิ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "กรุงเทพมหานคร",
+    "district": "ดอนเมือง",
+    "name": "DMK",
+    "icao": "VTBD",
+    "iata": "ท่าอากาศยานดอนเมือง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เชียงใหม่",
+    "district": "เมืองเชียงใหม่",
+    "name": "CNX",
+    "icao": "VTCC",
+    "iata": "ท่าอากาศยานเชียงใหม่",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เชียงราย",
+    "district": "เมืองเชียงราย",
+    "name": "CEI",
+    "icao": "VTCT",
+    "iata": "ท่าอากาศยานแม่ฟ้าหลวง เชียงราย",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ภูเก็ต",
+    "district": "ถลาง",
+    "name": "HKT",
+    "icao": "VTSP",
+    "iata": "ท่าอากาศยานนานาชาติภูเก็ต",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สงขลา",
+    "district": "คลองหอยโข่ง",
+    "name": "HDY",
+    "icao": "VTSS",
+    "iata": "ท่าอากาศยานหาดใหญ่",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "กระบี่",
+    "district": "เหนือคลอง",
+    "name": "KBV",
+    "icao": "VTSG",
+    "iata": "ท่าอากาศยานนานาชาติกระบี่",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ขอนแก่น",
+    "district": "เมืองขอนแก่น",
+    "name": "KKC",
+    "icao": "VTUK",
+    "iata": "ท่าอากาศยานนานาชาติขอนแก่น",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชุมพร",
+    "district": "ปะทิว",
+    "name": "CJM",
+    "icao": "VTSE",
+    "iata": "ท่าอากาศยานชุมพร",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ตรัง",
+    "district": "เมืองตรัง",
+    "name": "TST",
+    "icao": "VTST",
+    "iata": "ท่าอากาศยานตรัง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ตาก",
+    "district": "แม่สอด",
+    "name": "MAQ",
+    "icao": "VTPM",
+    "iata": "ท่าอากาศยานนานาชาติแม่สอด",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครพนม",
+    "district": "เมืองนครพนม",
+    "name": "KOP",
+    "icao": "VTUW",
+    "iata": "ท่าอากาศยานนครพนม",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครราชสีมา",
+    "district": "เฉลิมพระเกียรติ",
+    "name": "NAK",
+    "icao": "VTUQ",
+    "iata": "ท่าอากาศยานนครราชสีมา",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครศรีธรรมราช",
+    "district": "เมืองนครศรีธรรมราช",
+    "name": "NST",
+    "icao": "VTSF",
+    "iata": "ท่าอากาศยานนานาชาตินครศรีธรรมราช",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นราธิวาส",
+    "district": "เมืองนราธิวาส",
+    "name": "NAW",
+    "icao": "VTSC",
+    "iata": "ท่าอากาศยานนราธิวาส",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "น่าน",
+    "district": "เมืองน่าน",
+    "name": "NNT",
+    "icao": "VTCN",
+    "iata": "ท่าอากาศยานน่านนคร",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "บุรีรัมย์",
+    "district": "สตึก",
+    "name": "BFV",
+    "icao": "VTUO",
+    "iata": "ท่าอากาศยานบุรีรัมย์",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ประจวบคีรีขันธ์",
+    "district": "หัวหิน",
+    "name": "HHQ",
+    "icao": "VTPH",
+    "iata": "ท่าอากาศยานหัวหิน",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "พิษณุโลก",
+    "district": "เมืองพิษณุโลก",
+    "name": "PHS",
+    "icao": "VTPP",
+    "iata": "ท่าอากาศยานพิษณุโลก",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "แพร่",
+    "district": "เมืองแพร่",
+    "name": "PRH",
+    "icao": "VTCP",
+    "iata": "ท่าอากาศยานแพร่",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "แม่ฮ่องสอน",
+    "district": "เมืองแม่ฮ่องสอน",
+    "name": "HGN",
+    "icao": "VTCH",
+    "iata": "ท่าอากาศยานแม่ฮ่องสอน",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ยะลา",
+    "district": "เบตง",
+    "name": "BTZ",
+    "icao": "VTSY",
+    "iata": "ท่าอากาศยานนานาชาติเบตง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ร้อยเอ็ด",
+    "district": "ธวัชบุรี",
+    "name": "ROI",
+    "icao": "VTUV",
+    "iata": "ท่าอากาศยานร้อยเอ็ด",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ระนอง",
+    "district": "เมืองระนอง",
+    "name": "UNN",
+    "icao": "VTSR",
+    "iata": "ท่าอากาศยานระนอง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เลย",
+    "district": "เมืองเลย",
+    "name": "LOE",
+    "icao": "VTUL",
+    "iata": "ท่าอากาศยานเลย",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลำปาง",
+    "district": "เมืองลำปาง",
+    "name": "LPT",
+    "icao": "VTCL",
+    "iata": "ท่าอากาศยานลำปาง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สกลนคร",
+    "district": "เมืองสกลนคร",
+    "name": "SNO",
+    "icao": "VTUI",
+    "iata": "ท่าอากาศยานสกลนคร",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สุราษฎร์ธานี",
+    "district": "พุนพิน",
+    "name": "URT",
+    "icao": "VTSB",
+    "iata": "ท่าอากาศยานนานาชาติสุราษฎร์ธานี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "อุดรธานี",
+    "district": "เมืองอุดรธานี",
+    "name": "UTH",
+    "icao": "VTUD",
+    "iata": "ท่าอากาศยานนานาชาติอุดรธานี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "อุบลราชธานี",
+    "district": "เมืองอุบลราชธานี",
+    "name": "UBP",
+    "icao": "VTUU",
+    "iata": "ท่าอากาศยานนานาชาติอุบลราชธานี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ตราด",
+    "district": "เขาสมิง",
+    "name": "TDX",
+    "icao": "VTBO",
+    "iata": "ท่าอากาศยานตราด",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ระยอง",
+    "district": "บ้านฉาง",
+    "name": "UTP",
+    "icao": "VTBU",
+    "iata": "ท่าอากาศยานนานาชาติอู่ตะเภา (ระยอง–พัทยา)",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สุราษฎร์ธานี",
+    "district": "เกาะสมุย",
+    "name": "USM",
+    "icao": "VTSM",
+    "iata": "ท่าอากาศยานนานาชาติสมุย",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สุโขทัย",
+    "district": "สวรรคโลก",
+    "name": "THS",
+    "icao": "VTPO",
+    "iata": "ท่าอากาศยานสุโขทัย",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "กาญจนบุรี",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินบ้านเหนือ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "กาญจนบุรี",
+    "district": "เมืองกาญจนบุรี",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินกาญจนบุรี ค่ายสุรสีห์",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "กาฬสินธุ์",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินหลุบ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ขอนแก่น",
+    "district": "น้ำพอง",
+    "name": "-",
+    "icao": "VTUZ[2]",
+    "iata": "สนามบินน้ำพอง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ขอนแก่น",
+    "district": "เมืองขอนแก่น",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินโนนทัน",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ขอนแก่น",
+    "district": "เมืองขอนแก่น",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินพระลับ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "จันทบุรี",
+    "district": "ท่าใหม่",
+    "name": "-",
+    "icao": "VTBC",
+    "iata": "สนามบินจันทบุรี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชลบุรี",
+    "district": "สัตหีบ",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินสัตหีบ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชลบุรี",
+    "district": "เมือง",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินค่ายนวมินทราชินี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชัยภูมิ",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินชัยภูมิ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชัยภูมิ",
+    "district": "ภูเขียว",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินภูเขียว",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชุมพร",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินทับไก่",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เชียงราย",
+    "district": "เมืองเชียงราย",
+    "name": "-",
+    "icao": "VTCR",
+    "iata": "สนามบินเชียงราย",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ตราด",
+    "district": "เมืองตราด",
+    "name": "-",
+    "icao": "VTBV",
+    "iata": "สนามบินเกาะตะเคียน[3]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ตาก",
+    "district": "เมืองตาก",
+    "name": "TKT",
+    "icao": "VTPT",
+    "iata": "ท่าอากาศยานตาก",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ตาก",
+    "district": "สามเงา",
+    "name": "-",
+    "icao": "VTPY",
+    "iata": "สนามบินเขื่อนภูมิพล[4]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครปฐม",
+    "district": "กำแพงแสน",
+    "name": "KDT",
+    "icao": "VTBK",
+    "iata": "สนามบินกำแพงแสน",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครปฐม",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินต้นสำโรง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครพนม",
+    "district": "เมืองนครพนม",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินนครพนม (เก่า)",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครราชสีมา",
+    "district": "เมืองนครราชสีมา",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินค่ายสุรนารี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครราชสีมา",
+    "district": "เมืองนครราชสีมา",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินโพธิ์กลาง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครสวรรค์",
+    "district": "ตาคลี",
+    "name": "TKH",
+    "icao": "VTPI",
+    "iata": "ท่าอากาศยานตาคลี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "นครสวรรค์",
+    "district": "เมืองนครสวรรค์",
+    "name": "-",
+    "icao": "VTPN",
+    "iata": "สนามบินนครสวรรค์[6]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "บึงกาฬ",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินบึงกาฬ (เก่า)",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "บุรีรัทย์",
+    "district": "นางรอง",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินนางรอง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ประจวบคีรีขันธ์",
+    "district": "เมืองประจวบคีรีขันธ์",
+    "name": "-",
+    "icao": "VTBP",
+    "iata": "สนามบินประจวบคีรีขันธ์[7]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ประจวบคีรีขันธ์",
+    "district": "ปราณบุรี",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินค่ายธนะรัชต์",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ปราจีนบุรี",
+    "district": "เมืองปราจีนบุรี",
+    "name": "-",
+    "icao": "VTBI",
+    "iata": "สนามบินปราจีนบุรี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ปราจีนบุรี",
+    "district": "กบินทร์บุรี",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินกบินทร์บุรี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ปัตตานี",
+    "district": "หนองจิก",
+    "name": "PAN",
+    "icao": "VTSK",
+    "iata": "ท่าอากาศยานปัตตานี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เพชรบุรี",
+    "district": "ท่ายาง",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินท่ายาง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เพชรบูรณ์",
+    "district": "หล่มสัก",
+    "name": "PHY",
+    "icao": "VTPB",
+    "iata": "ท่าอากาศยานเพชรบูรณ์",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เพชรบูรณ์",
+    "district": "หล่มสัก",
+    "name": "-",
+    "icao": "VTPL",
+    "iata": "สนามบินสักหลง[8]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เพชรบูรณ์",
+    "district": "วิเชียรบุรี",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินท่าโรง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "เพชรบูรณ์",
+    "district": "เมืองเพชรบูรณ์",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินกองพลทหารม้าที่ 1",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "แม่ฮ่องสอน",
+    "district": "ขุนยวม",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินขุนยวม[9]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "แม่ฮ่องสอน",
+    "district": "ปาย",
+    "name": "PYY",
+    "icao": "VTCI",
+    "iata": "ท่าอากาศยานปาย",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "แม่ฮ่องสอน",
+    "district": "แม่สะเรียง",
+    "name": "-",
+    "icao": "VTCS",
+    "iata": "สนามบินแม่สะเรียง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ร้อยเอ็ด",
+    "district": "เมืองร้อยเอ็ด",
+    "name": "-",
+    "icao": "VTUR",
+    "iata": "สนามบินรอบเมือง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ราชบุรี",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินราชบุรี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ราชบุรี",
+    "district": "เมืองราชบุรี",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินค่ายบุรฉัตร",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลพบุรี",
+    "district": "เมืองลพบุรี",
+    "name": "KKM",
+    "icao": "VTBL",
+    "iata": "สนามบินโคกกระเทียม",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลพบุรี",
+    "district": "ชัยบาดาล",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินชัยบาดาล[10][11]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลพบุรี",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินโคกสลุง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลพบุรี",
+    "district": "เมืองลพบุรี",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินสระพรานนาค",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลำปาง",
+    "district": "เกาะคา",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินเกาะคา",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ศรีสะเกษ",
+    "district": "เมืองศรีสะเกษ",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินศรีสะเกษ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สกลนคร",
+    "district": "สว่างแดนดิน",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินสว่างแดนดิน",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สกลนคร",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินบ้านเชียงเครือ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สงขลา",
+    "district": "เมืองสงขลา",
+    "name": "SKL",
+    "icao": "VTSH",
+    "iata": "ท่าอากาศยานสงขลา",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สงขลา",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินทุ่งค่าย",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สตูล",
+    "district": "เมืองสตูล",
+    "name": "-",
+    "icao": "VTSA",
+    "iata": "สนามบินควนขัน",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สระบุรี",
+    "district": "เมืองสระบุรี",
+    "name": "-",
+    "icao": "VTBE",
+    "iata": "สนามบินปากเพรียว",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สระแก้ว",
+    "district": "วัฒนานคร",
+    "name": "-",
+    "icao": "VTBW",
+    "iata": "สนามบินวัฒนานคร[12]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สระแก้ว",
+    "district": "อรัญญประเทศ",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินอรัญญประเทศ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สุโขทัย",
+    "district": "สวรรคโลก",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินสวรรคโลก",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สุพรรณบุรี",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินสุพรรณบุรี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สุรินทร์",
+    "district": "เมืองสุรินทร์",
+    "name": "PXR",
+    "icao": "VTUJ",
+    "iata": "ท่าอากาศยานสุรินทร์ภักดี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สุรินทร์",
+    "district": "ชุมพลบุรี",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินชุมพลบุรี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "สุรินทร์",
+    "district": "รัตนบุรี",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินรัตนบุรี",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "หนองคาย",
+    "district": "",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินมีชัย",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "อุตรดิตถ์",
+    "district": "เมืองอุตรดิตถ์",
+    "name": "UTR",
+    "icao": "VTPU",
+    "iata": "สนามบินอุตรดิตถ์[13]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชลบุรี",
+    "district": "ศรีราชา",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินศรีราชา",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชลบุรี",
+    "district": "ศรีราชา",
+    "name": "QHI",
+    "icao": "VTBT",
+    "iata": "สนามบินบางพระ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ชลบุรี",
+    "district": "ศรีราชา",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินหนองคร้อ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ตาก",
+    "district": "อุ้มผาง",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินชุมชนอุ้มผาง",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ตราด",
+    "district": "เกาะกูด",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินเกาะไม้ซี้",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "พะเยา",
+    "district": "เชียงคำ",
+    "name": "-",
+    "icao": "VTCB",
+    "iata": "สนามบินเชียงคำ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ยโสธร",
+    "district": "เลิงนกทา",
+    "name": "-",
+    "icao": "-",
+    "iata": "สนามบินเลิงนกทา",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ราชบุรี",
+    "district": "โพธาราม",
+    "name": "-",
+    "icao": "VTPR",
+    "iata": "สนามบินโพธาราม",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลำพูน",
+    "district": "บ้านธิ",
+    "name": "-",
+    "icao": "VTCM",
+    "iata": "สนามบินบ้านธิ",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลำพูน",
+    "district": "บ้านธิ",
+    "name": "-",
+    "icao": "VTCY",
+    "iata": "สนามบินนก",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "ลำพูน",
+    "district": "เมืองลำพูน",
+    "name": "-",
+    "icao": "VTCO",
+    "iata": "สนามบินลำพูน[14]",
+    "coords": "",
+    "link": null
+  },
+  {
+    "province": "1",
+    "district": "ท่าอากาศยานสุวรรณภูมิ",
+    "name": "จังหวัดสมุทรปราการ",
+    "icao": "BKK",
+    "iata": "VTBS",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดสมุทรปราการ"
+  },
+  {
+    "province": "2",
+    "district": "ท่าอากาศยานดอนเมือง",
+    "name": "กรุงเทพมหานคร",
+    "icao": "DMK",
+    "iata": "VTBD",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/กรุงเทพมหานคร"
+  },
+  {
+    "province": "3",
+    "district": "ท่าอากาศยานภูเก็ต",
+    "name": "จังหวัดภูเก็ต",
+    "icao": "HKT",
+    "iata": "VTSP",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดภูเก็ต"
+  },
+  {
+    "province": "4",
+    "district": "ท่าอากาศยานเชียงใหม่",
+    "name": "จังหวัดเชียงใหม่",
+    "icao": "CNX",
+    "iata": "VTCC",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดเชียงใหม่"
+  },
+  {
+    "province": "5",
+    "district": "ท่าอากาศยานหาดใหญ่",
+    "name": "จังหวัดสงขลา",
+    "icao": "HDY",
+    "iata": "VTSS",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดสงขลา"
+  },
+  {
+    "province": "6",
+    "district": "ท่าอากาศยานแม่ฟ้าหลวง เชียงราย",
+    "name": "จังหวัดเชียงราย",
+    "icao": "CEI",
+    "iata": "VTCT",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดเชียงราย"
+  },
+  {
+    "province": "7",
+    "district": "ท่าอากาศยานอุดรธานี",
+    "name": "จังหวัดอุดรธานี",
+    "icao": "UTH",
+    "iata": "VTUD",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดอุดรธานี"
+  },
+  {
+    "province": "8",
+    "district": "ท่าอากาศยานกระบี่",
+    "name": "จังหวัดกระบี่",
+    "icao": "KBV",
+    "iata": "VTSG",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดกระบี่"
+  },
+  {
+    "province": "9",
+    "district": "ท่าอากาศยานนครศรีธรรมราช",
+    "name": "จังหวัดนครศรีธรรมราช",
+    "icao": "NST",
+    "iata": "VTSF",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดนครศรีธรรมราช"
+  },
+  {
+    "province": "10",
+    "district": "ท่าอากาศยานนานาชาติขอนแก่น",
+    "name": "จังหวัดขอนแก่น",
+    "icao": "KKC",
+    "iata": "VTUK",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดขอนแก่น"
+  },
+  {
+    "province": "11",
+    "district": "ท่าอากาศยานสุราษฎร์ธานี",
+    "name": "จังหวัดสุราษฎร์ธานี",
+    "icao": "URT",
+    "iata": "VTSB",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดสุราษฎร์ธานี"
+  },
+  {
+    "province": "12",
+    "district": "ท่าอากาศยานอุบลราชธานี",
+    "name": "จังหวัดอุบลราชธานี",
+    "icao": "UBP",
+    "iata": "VTUU",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดอุบลราชธานี"
+  },
+  {
+    "province": "13",
+    "district": "ท่าอากาศยานเกาะสมุย",
+    "name": "จังหวัดสุราษฎร์ธานี",
+    "icao": "USM",
+    "iata": "VTSM",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดสุราษฎร์ธานี"
+  },
+  {
+    "province": "14",
+    "district": "ท่าอากาศยานอู่ตะเภา",
+    "name": "จังหวัดระยอง",
+    "icao": "UTP",
+    "iata": "VTBU",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดระยอง"
+  },
+  {
+    "province": "15",
+    "district": "ท่าอากาศยานตรัง",
+    "name": "จังหวัดตรัง",
+    "icao": "TST",
+    "iata": "VTST",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดตรัง"
+  },
+  {
+    "province": "16",
+    "district": "ท่าอากาศยานพิษณุโลก",
+    "name": "จังหวัดพิษณุโลก",
+    "icao": "PHS",
+    "iata": "VTPP",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดพิษณุโลก"
+  },
+  {
+    "province": "17",
+    "district": "ท่าอากาศยานน่านนคร",
+    "name": "จังหวัดน่าน",
+    "icao": "NNT",
+    "iata": "VTCN",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดน่าน"
+  },
+  {
+    "province": "18",
+    "district": "ท่าอากาศยานสกลนคร",
+    "name": "จังหวัดสกลนคร",
+    "icao": "SNO",
+    "iata": "VTUL",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดสกลนคร"
+  },
+  {
+    "province": "19",
+    "district": "ท่าอากาศยานนครพนม",
+    "name": "จังหวัดนครพนม",
+    "icao": "KOP",
+    "iata": "VTUW",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดนครพนม"
+  },
+  {
+    "province": "20",
+    "district": "ท่าอากาศยานร้อยเอ็ด",
+    "name": "จังหวัดร้อยเอ็ด",
+    "icao": "ROI",
+    "iata": "VTUV",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดร้อยเอ็ด"
+  },
+  {
+    "province": "21",
+    "district": "ท่าอากาศยานบุรีรัมย์",
+    "name": "จังหวัดบุรีรัมย์",
+    "icao": "BFV",
+    "iata": "VTUO",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดบุรีรัมย์"
+  },
+  {
+    "province": "22",
+    "district": "ท่าอากาศยานลำปาง",
+    "name": "จังหวัดลำปาง",
+    "icao": "LPT",
+    "iata": "VTCL",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดลำปาง"
+  },
+  {
+    "province": "23",
+    "district": "ท่าอากาศยานเลย",
+    "name": "จังหวัดเลย",
+    "icao": "LOE",
+    "iata": "VTUL",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดเลย"
+  },
+  {
+    "province": "24",
+    "district": "ท่าอากาศยานนราธิวาส",
+    "name": "จังหวัดนราธิวาส",
+    "icao": "NAW",
+    "iata": "VTSC",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดนราธิวาส"
+  },
+  {
+    "province": "25",
+    "district": "ท่าอากาศยานระนอง",
+    "name": "จังหวัดระนอง",
+    "icao": "UNN",
+    "iata": "VTSR",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดระนอง"
+  },
+  {
+    "province": "26",
+    "district": "ท่าอากาศยานแม่สอด",
+    "name": "จังหวัดตาก",
+    "icao": "MAQ",
+    "iata": "VTPM",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดตาก"
+  },
+  {
+    "province": "27",
+    "district": "ท่าอากาศยานชุมพร",
+    "name": "จังหวัดชุมพร",
+    "icao": "CJM",
+    "iata": "VTSE",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดชุมพร"
+  },
+  {
+    "province": "28",
+    "district": "ท่าอากาศยานตราด",
+    "name": "จังหวัดตราด",
+    "icao": "TDX",
+    "iata": "VTBO",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดตราด"
+  },
+  {
+    "province": "29",
+    "district": "ท่าอากาศยานสุโขทัย",
+    "name": "จังหวัดสุโขทัย",
+    "icao": "THS",
+    "iata": "VTPO",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดสุโขทัย"
+  },
+  {
+    "province": "30",
+    "district": "ท่าอากาศยานแพร่",
+    "name": "จังหวัดแพร่",
+    "icao": "PRH",
+    "iata": "VTCP",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดแพร่"
+  },
+  {
+    "province": "31",
+    "district": "ท่าอากาศยานแม่ฮ่องสอน",
+    "name": "จังหวัดแม่ฮ่องสอน",
+    "icao": "HGN",
+    "iata": "VTCH",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดแม่ฮ่องสอน"
+  },
+  {
+    "province": "32",
+    "district": "ท่าอากาศยานหัวหิน",
+    "name": "จังหวัดประจวบคีรีขันธ์",
+    "icao": "HHQ",
+    "iata": "VTPH",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดประจวบคีรีขันธ์"
+  },
+  {
+    "province": "33",
+    "district": "ท่าอากาศยานนครราชสีมา",
+    "name": "จังหวัดนครราชสีมา",
+    "icao": "NAK",
+    "iata": "VTUQ",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดนครราชสีมา"
+  },
+  {
+    "province": "34",
+    "district": "ท่าอากาศยานปาย",
+    "name": "จังหวัดแม่ฮ่องสอน",
+    "icao": "PYY",
+    "iata": "VICI",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดแม่ฮ่องสอน"
+  },
+  {
+    "province": "35",
+    "district": "ท่าอากาศยานเพชรบูรณ์",
+    "name": "จังหวัดเพชรบูรณ์",
+    "icao": "PHY",
+    "iata": "VTPL",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดเพชรบูรณ์"
+  },
+  {
+    "province": "36",
+    "district": "ท่าอากาศยานปัตตานี",
+    "name": "จังหวัดปัตตานี",
+    "icao": "PAN",
+    "iata": "VTSK",
+    "coords": "",
+    "link": "https://th.wikipedia.org//th.wikipedia.org/wiki/จังหวัดปัตตานี"
+  }
+]

@@ -1,0 +1,822 @@
+[
+  {
+    "id": "VTBS",
+    "nameTh": "ท่าอากาศยานสุวรรณภูมิ",
+    "nameEn": "Suvarnabhumi Airport",
+    "locationTh": "สมุทรปราการ",
+    "lat": 13.6818767,
+    "lng": 100.7485803,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสุวรรณภูมิ"
+  },
+  {
+    "id": "VTBD",
+    "nameTh": "ท่าอากาศยานดอนเมือง",
+    "nameEn": "Don Mueang International Airport",
+    "locationTh": "กรุงเทพมหานคร",
+    "lat": 13.9122207,
+    "lng": 100.6035314,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานดอนเมือง"
+  },
+  {
+    "id": "VTCC",
+    "nameTh": "ท่าอากาศยานเชียงใหม่",
+    "nameEn": "Chiang Mai International Airport",
+    "locationTh": "เชียงใหม่",
+    "lat": 18.7695291,
+    "lng": 98.9692713,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานเชียงใหม่"
+  },
+  {
+    "id": "VTCT",
+    "nameTh": "ท่าอากาศยานแม่ฟ้าหลวง เชียงราย",
+    "nameEn": "Mae Fah Luang  - Chiang Rai International Airport",
+    "locationTh": "เชียงราย",
+    "lat": 19.9550586,
+    "lng": 99.879221,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานแม่ฟ้าหลวง_เชียงราย"
+  },
+  {
+    "id": "VTSS",
+    "nameTh": "ท่าอากาศยานหาดใหญ่",
+    "nameEn": "Hat Yai International Airport",
+    "locationTh": "สงขลา",
+    "lat": 6.9402579,
+    "lng": 100.3854062,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานหาดใหญ่"
+  },
+  {
+    "id": "VTSG",
+    "nameTh": "ท่าอากาศยานนานาชาติกระบี่",
+    "nameEn": "Krabi International Airport",
+    "locationTh": "กระบี่",
+    "lat": 8.10083333,
+    "lng": 98.98472222,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติกระบี่"
+  },
+  {
+    "id": "VTUK",
+    "nameTh": "ท่าอากาศยานนานาชาติขอนแก่น",
+    "nameEn": "Khon Kaen International Airport",
+    "locationTh": "ขอนแก่น",
+    "lat": 16.46662778,
+    "lng": 102.78366111,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติขอนแก่น"
+  },
+  {
+    "id": "VTSE",
+    "nameTh": "ท่าอากาศยานชุมพร",
+    "nameEn": "Chumphon Airport",
+    "locationTh": "ชุมพร",
+    "lat": 10.7112,
+    "lng": 99.36170556,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานชุมพร"
+  },
+  {
+    "id": "VTST",
+    "nameTh": "ท่าอากาศยานตรัง",
+    "nameEn": "Trang Airport",
+    "locationTh": "ตรัง",
+    "lat": 7.508256,
+    "lng": 99.6152278,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานตรัง"
+  },
+  {
+    "id": "VTPM",
+    "nameTh": "ท่าอากาศยานนานาชาติแม่สอด",
+    "nameEn": "Mae Sot International Airport",
+    "locationTh": "ตาก",
+    "lat": 16.69972222,
+    "lng": 98.545,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติแม่สอด"
+  },
+  {
+    "id": "VTUW",
+    "nameTh": "ท่าอากาศยานนครพนม",
+    "nameEn": "Nakhon Phanom Airport",
+    "locationTh": "นครพนม",
+    "lat": 17.3831775,
+    "lng": 104.6444264,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนครพนม"
+  },
+  {
+    "id": "VTUQ",
+    "nameTh": "ท่าอากาศยานนครราชสีมา",
+    "nameEn": "Nakhon Ratchasima Airport",
+    "locationTh": "นครราชสีมา",
+    "lat": 14.9486292,
+    "lng": 102.3087089,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนครราชสีมา"
+  },
+  {
+    "id": "VTSF",
+    "nameTh": "ท่าอากาศยานนานาชาตินครศรีธรรมราช",
+    "nameEn": "Nakhon Si Thammarat International Airport",
+    "locationTh": "นครศรีธรรมราช",
+    "lat": 8.5361535,
+    "lng": 99.9432125,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาตินครศรีธรรมราช"
+  },
+  {
+    "id": "VTSC",
+    "nameTh": "ท่าอากาศยานนราธิวาส",
+    "nameEn": "Narathiwat Airport",
+    "locationTh": "นราธิวาส",
+    "lat": 6.5138138,
+    "lng": 101.7408213,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนราธิวาส"
+  },
+  {
+    "id": "VTCN",
+    "nameTh": "ท่าอากาศยานน่านนคร",
+    "nameEn": "Nan Nakhon Airport",
+    "locationTh": "น่าน",
+    "lat": 18.80777778,
+    "lng": 100.78333333,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานน่านนคร"
+  },
+  {
+    "id": "VTUO",
+    "nameTh": "ท่าอากาศยานบุรีรัมย์",
+    "nameEn": "Buriram Airport",
+    "locationTh": "บุรีรัมย์",
+    "lat": 15.2251616,
+    "lng": 103.2477758,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานบุรีรัมย์"
+  },
+  {
+    "id": "VTPH",
+    "nameTh": "ท่าอากาศยานหัวหิน",
+    "nameEn": "Hua Hin Airport",
+    "locationTh": "ประจวบคีรีขันธ์",
+    "lat": 12.6368554,
+    "lng": 99.9510278,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานหัวหิน"
+  },
+  {
+    "id": "VTPP",
+    "nameTh": "ท่าอากาศยานพิษณุโลก",
+    "nameEn": "Phitsanulok Airport",
+    "locationTh": "พิษณุโลก",
+    "lat": 16.7815939,
+    "lng": 100.2746632,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานพิษณุโลก"
+  },
+  {
+    "id": "VTCP",
+    "nameTh": "ท่าอากาศยานแพร่",
+    "nameEn": "Phrae Airport",
+    "locationTh": "แพร่",
+    "lat": 18.1317123,
+    "lng": 100.1636829,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานแพร่"
+  },
+  {
+    "id": "VTCH",
+    "nameTh": "ท่าอากาศยานแม่ฮ่องสอน",
+    "nameEn": "Mae Hong Son Airport",
+    "locationTh": "แม่ฮ่องสอน",
+    "lat": 19.301074,
+    "lng": 97.9758393,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานแม่ฮ่องสอน"
+  },
+  {
+    "id": "VTSY",
+    "nameTh": "ท่าอากาศยานนานาชาติเบตง",
+    "nameEn": "Betong International Airport",
+    "locationTh": "ยะลา",
+    "lat": 5.789387,
+    "lng": 101.1497593,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติเบตง"
+  },
+  {
+    "id": "VTUV",
+    "nameTh": "ท่าอากาศยานร้อยเอ็ด",
+    "nameEn": "Roi Et Airport",
+    "locationTh": "ร้อยเอ็ด",
+    "lat": 16.1150394,
+    "lng": 103.7748535,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานร้อยเอ็ด"
+  },
+  {
+    "id": "VTSR",
+    "nameTh": "ท่าอากาศยานระนอง",
+    "nameEn": "Ranong Airport",
+    "locationTh": "ระนอง",
+    "lat": 9.777307,
+    "lng": 98.5863199,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานระนอง"
+  },
+  {
+    "id": "VTUL",
+    "nameTh": "ท่าอากาศยานเลย",
+    "nameEn": "Loei Airport",
+    "locationTh": "เลย",
+    "lat": 17.4377964,
+    "lng": 101.7213999,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานเลย"
+  },
+  {
+    "id": "VTCL",
+    "nameTh": "ท่าอากาศยานลำปาง",
+    "nameEn": "Lampang Airport",
+    "locationTh": "ลำปาง",
+    "lat": 18.2681639,
+    "lng": 99.5043039,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานลำปาง"
+  },
+  {
+    "id": "VTUI",
+    "nameTh": "ท่าอากาศยานสกลนคร",
+    "nameEn": "Sakon Nakhon Airport",
+    "locationTh": "สกลนคร",
+    "lat": 17.1958129,
+    "lng": 104.1182177,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสกลนคร"
+  },
+  {
+    "id": "VTSB",
+    "nameTh": "ท่าอากาศยานนานาชาติสุราษฎร์ธานี",
+    "nameEn": "Surat Thani International Airport",
+    "locationTh": "สุราษฎร์ธานี",
+    "lat": 9.1325,
+    "lng": 99.13555556,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติสุราษฎร์ธานี"
+  },
+  {
+    "id": "VTUD",
+    "nameTh": "ท่าอากาศยานนานาชาติอุดรธานี",
+    "nameEn": "Udon Thani International Airport",
+    "locationTh": "อุดรธานี",
+    "lat": 17.3856715,
+    "lng": 102.7869599,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติอุดรธานี"
+  },
+  {
+    "id": "VTUU",
+    "nameTh": "ท่าอากาศยานนานาชาติอุบลราชธานี",
+    "nameEn": "Ubon Ratchathani International Airport",
+    "locationTh": "อุบลราชธานี",
+    "lat": 15.246905,
+    "lng": 104.870735,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติอุบลราชธานี"
+  },
+  {
+    "id": "VTBO",
+    "nameTh": "ท่าอากาศยานตราด",
+    "nameEn": "Trat Airport",
+    "locationTh": "ตราด",
+    "lat": 12.2808021,
+    "lng": 102.3236367,
+    "category": "PRIVATE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานตราด"
+  },
+  {
+    "id": "VTBU",
+    "nameTh": "ท่าอากาศยานนานาชาติอู่ตะเภา (ระยอง–พัทยา)",
+    "nameEn": "U-Tapao International Airport",
+    "locationTh": "ระยอง",
+    "lat": 12.68,
+    "lng": 101.005,
+    "category": "NAVY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติอู่ตะเภา_(ระยอง–พัทยา)"
+  },
+  {
+    "id": "VTSM",
+    "nameTh": "ท่าอากาศยานนานาชาติสมุย",
+    "nameEn": "Samui International Airport",
+    "locationTh": "สุราษฎร์ธานี",
+    "lat": 9.5488263,
+    "lng": 100.0631993,
+    "category": "PRIVATE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติสมุย"
+  },
+  {
+    "id": "VTPO",
+    "nameTh": "ท่าอากาศยานสุโขทัย",
+    "nameEn": "Sukhothai Airport",
+    "locationTh": "สุโขทัย",
+    "lat": 17.2355871,
+    "lng": 99.8215677,
+    "category": "PRIVATE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสุโขทัย"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินกาญจนบุรี ค่ายสุรสีห์",
+    "nameEn": "สนามบินกาญจนบุรี ค่ายสุรสีห์",
+    "locationTh": "กาญจนบุรี",
+    "lat": 14.1258614,
+    "lng": 99.4469827,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินกาญจนบุรี_ค่ายสุรสีห์?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินพระลับ",
+    "nameEn": "สนามบินพระลับ",
+    "locationTh": "ขอนแก่น",
+    "lat": 16.4394252,
+    "lng": 102.8379626,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินพระลับ?action=edit&redlink=1"
+  },
+  {
+    "id": "VTBC",
+    "nameTh": "สนามบินจันทบุรี",
+    "nameEn": "Chanthaburi Airstrip",
+    "locationTh": "จันทบุรี",
+    "lat": 12.6316279,
+    "lng": 102.0254242,
+    "category": "NAVY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินจันทบุรี"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินชัยภูมิ",
+    "nameEn": "สนามบินชัยภูมิ",
+    "locationTh": "ชัยภูมิ",
+    "lat": 15.7685472,
+    "lng": 101.9462291,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินชัยภูมิ?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินภูเขียว",
+    "nameEn": "สนามบินภูเขียว",
+    "locationTh": "ชัยภูมิ",
+    "lat": 16.3612207,
+    "lng": 102.1588262,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินภูเขียว?action=edit&redlink=1"
+  },
+  {
+    "id": "VTCR",
+    "nameTh": "สนามบินเชียงราย",
+    "nameEn": "Chiang Rai Airport",
+    "locationTh": "เชียงราย",
+    "lat": 19.8896906,
+    "lng": 99.8276212,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ฐานบินเชียงราย"
+  },
+  {
+    "id": "VTBV",
+    "nameTh": "สนามบินเกาะตะเคียน[3]",
+    "nameEn": "Koh Takian Airport",
+    "locationTh": "ตราด",
+    "lat": 12.2542802,
+    "lng": 102.5181282,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินเกาะตะเคียน?action=edit&redlink=1"
+  },
+  {
+    "id": "VTPT",
+    "nameTh": "ท่าอากาศยานตาก",
+    "nameEn": "Tak Airport",
+    "locationTh": "ตาก",
+    "lat": 16.8978868,
+    "lng": 99.2545255,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานตาก"
+  },
+  {
+    "id": "VTBK",
+    "nameTh": "สนามบินกำแพงแสน",
+    "nameEn": "Kamphaeng Saen Airport",
+    "locationTh": "นครปฐม",
+    "lat": 14.1008976,
+    "lng": 99.9184437,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินกำแพงแสน"
+  },
+  {
+    "id": "VTSN",
+    "nameTh": "สนามบินชะเอียน",
+    "nameEn": "Cha Eian Airport",
+    "locationTh": "นครศรีธรรมราช",
+    "lat": 8.4701019,
+    "lng": 99.9566766,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินชะเอียน"
+  },
+  {
+    "id": "VTBP",
+    "nameTh": "สนามบินประจวบคีรีขันธ์[7]",
+    "nameEn": "Prachuap Khiri Khan Military Airport",
+    "locationTh": "ประจวบคีรีขันธ์",
+    "lat": 12.3894114,
+    "lng": 99.9576335,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินประจวบคีรีขันธ์?action=edit&redlink=1"
+  },
+  {
+    "id": "VTBI",
+    "nameTh": "สนามบินปราจีนบุรี",
+    "nameEn": "Prachin Buri Airport",
+    "locationTh": "ปราจีนบุรี",
+    "lat": 14.0203098,
+    "lng": 101.7027009,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินปราจีนบุรี"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินกบินทร์บุรี",
+    "nameEn": "Kabinburi Airport",
+    "locationTh": "ปราจีนบุรี",
+    "lat": 14.0203098,
+    "lng": 101.7027009,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินกบินทร์บุรี?action=edit&redlink=1"
+  },
+  {
+    "id": "VTSK",
+    "nameTh": "ท่าอากาศยานปัตตานี",
+    "nameEn": "Pattani Airport",
+    "locationTh": "ปัตตานี",
+    "lat": 6.7854878,
+    "lng": 101.1527689,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานปัตตานี"
+  },
+  {
+    "id": "VTPB",
+    "nameTh": "ท่าอากาศยานเพชรบูรณ์",
+    "nameEn": "Phetchabun Airport",
+    "locationTh": "เพชรบูรณ์",
+    "lat": 16.6758588,
+    "lng": 101.1905078,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานเพชรบูรณ์"
+  },
+  {
+    "id": "VTCI",
+    "nameTh": "ท่าอากาศยานปาย",
+    "nameEn": "Pai Airport",
+    "locationTh": "แม่ฮ่องสอน",
+    "lat": 19.372147,
+    "lng": 98.4358962,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานปาย"
+  },
+  {
+    "id": "VTCS",
+    "nameTh": "สนามบินแม่สะเรียง",
+    "nameEn": "Mae Sariang Airport",
+    "locationTh": "แม่ฮ่องสอน",
+    "lat": 18.1785145,
+    "lng": 97.930412,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินแม่สะเรียง"
+  },
+  {
+    "id": "VTUR",
+    "nameTh": "สนามบินรอบเมือง",
+    "nameEn": "Rob Mueang Airport",
+    "locationTh": "ร้อยเอ็ด",
+    "lat": 16.068234,
+    "lng": 103.6444632,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินรอบเมือง?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินราชบุรี",
+    "nameEn": "สนามบินราชบุรี",
+    "locationTh": "ราชบุรี",
+    "lat": 13.7599119,
+    "lng": 100.5238726,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินราชบุรี"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินบ้านเชียงเครือ",
+    "nameEn": "สนามบินบ้านเชียงเครือ",
+    "locationTh": "สกลนคร",
+    "lat": 17.295209,
+    "lng": 104.1127873,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินบ้านเชียงเครือ?action=edit&redlink=1"
+  },
+  {
+    "id": "VTSH",
+    "nameTh": "ท่าอากาศยานสงขลา",
+    "nameEn": "Songkhla Airport",
+    "locationTh": "สงขลา",
+    "lat": 7.1863834,
+    "lng": 100.6068419,
+    "category": "NAVY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสงขลา"
+  },
+  {
+    "id": "VTSA",
+    "nameTh": "สนามบินควนขัน",
+    "nameEn": "Khuan Khan Airport",
+    "locationTh": "สตูล",
+    "lat": 6.662243,
+    "lng": 100.0800349,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินควนขัน?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินสวรรคโลก",
+    "nameEn": "สนามบินสวรรคโลก",
+    "locationTh": "สุโขทัย",
+    "lat": 17.2355871,
+    "lng": 99.8215677,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินสวรรคโลก?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินสุพรรณบุรี",
+    "nameEn": "สนามบินสุพรรณบุรี",
+    "locationTh": "สุพรรณบุรี",
+    "lat": 15.2280823,
+    "lng": 103.2478275,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินสุพรรณบุรี?action=edit&redlink=1"
+  },
+  {
+    "id": "VTUJ",
+    "nameTh": "ท่าอากาศยานสุรินทร์ภักดี",
+    "nameEn": "Surin Bhakdi Airport",
+    "locationTh": "สุรินทร์",
+    "lat": 14.8668057,
+    "lng": 103.4979606,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสุรินทร์ภักดี"
+  },
+  {
+    "id": "-",
+    "nameTh": "ท่าอากาศยานนานาชาติบึงกาฬ",
+    "nameEn": "Bueng Kan International Airport",
+    "locationTh": "บึงกาฬ",
+    "lat": 18.33,
+    "lng": 103.56194444,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติบึงกาฬ"
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ชลบุรี",
+    "lat": 13.3662087,
+    "lng": 100.9872185,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ชลบุรี",
+    "lat": 13.3662087,
+    "lng": 100.9872185,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ตาก",
+    "lat": 16.8722576,
+    "lng": 99.1248355,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ตราด",
+    "lat": 12.2440564,
+    "lng": 102.5122822,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "พะเยา",
+    "lat": 19.1667813,
+    "lng": 99.9021075,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ยโสธร",
+    "lat": 15.7926751,
+    "lng": 104.1452903,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ราชบุรี",
+    "lat": 13.539067,
+    "lng": 99.8197035,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "",
+    "nameTh": "",
+    "nameEn": "",
+    "locationTh": "ลพบุรี",
+    "lat": 14.8023289,
+    "lng": 100.6146858,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ลำพูน",
+    "lat": 18.5776383,
+    "lng": 99.0069034,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ลำพูน",
+    "lat": 18.5776383,
+    "lng": 99.0069034,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ลำพูน",
+    "lat": 18.5776383,
+    "lng": 99.0069034,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดสุพรรณบุรี",
+    "nameTh": "สนามบินจังหวัดสุพรรณบุรี",
+    "nameEn": "สนามบินจังหวัดสุพรรณบุรี",
+    "locationTh": "สุพรรณบุรี",
+    "lat": 15.2280823,
+    "lng": 103.2478275,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดสวรรคโลก",
+    "nameTh": "สนามบินจังหวัดสวรรคโลก",
+    "nameEn": "สนามบินจังหวัดสวรรคโลก",
+    "locationTh": "สวรรคโลก",
+    "lat": 17.2355871,
+    "lng": 99.8215677,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดอุตรดิตถ์",
+    "nameTh": "สนามบินจังหวัดอุตรดิตถ์",
+    "nameEn": "สนามบินจังหวัดอุตรดิตถ์",
+    "locationTh": "อุตรดิตถ์",
+    "lat": 17.6735746,
+    "lng": 100.2334897,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดชัยภูมิ",
+    "nameTh": "สนามบินจังหวัดชัยภูมิ",
+    "nameEn": "สนามบินจังหวัดชัยภูมิ",
+    "locationTh": "ชัยภูมิ",
+    "lat": 15.7685472,
+    "lng": 101.9462291,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดพิษณุโลก",
+    "nameTh": "สนามบินจังหวัดพิษณุโลก",
+    "nameEn": "สนามบินจังหวัดพิษณุโลก",
+    "locationTh": "พิษณุโลก",
+    "lat": 16.7962228,
+    "lng": 100.274489,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดราชบุรี",
+    "nameTh": "สนามบินจังหวัดราชบุรี",
+    "nameEn": "สนามบินจังหวัดราชบุรี",
+    "locationTh": "ราชบุรี",
+    "lat": 13.6705751,
+    "lng": 99.7326947,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดสุโขทัย",
+    "nameTh": "สนามบินจังหวัดสุโขทัย",
+    "nameEn": "สนามบินจังหวัดสุโขทัย",
+    "locationTh": "สุโขทัย",
+    "lat": 17.2355871,
+    "lng": 99.8215677,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดเพชรบูรณ์",
+    "nameTh": "สนามบินจังหวัดเพชรบูรณ์",
+    "nameEn": "สนามบินจังหวัดเพชรบูรณ์",
+    "locationTh": "เพชรบูรณ์",
+    "lat": 16.8243008,
+    "lng": 101.2509995,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดน่าน",
+    "nameTh": "สนามบินจังหวัดน่าน",
+    "nameEn": "สนามบินจังหวัดน่าน",
+    "locationTh": "น่าน",
+    "lat": 18.5462625,
+    "lng": 99.0119009,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดเพชรบุรี",
+    "nameTh": "สนามบินจังหวัดเพชรบุรี",
+    "nameEn": "สนามบินจังหวัดเพชรบุรี",
+    "locationTh": "เพชรบุรี",
+    "lat": 12.6270148,
+    "lng": 99.95103,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินหัวหิน",
+    "nameTh": "สนามบินหัวหิน",
+    "nameEn": "สนามบินหัวหิน",
+    "locationTh": "หัวหิน",
+    "lat": 12.6270148,
+    "lng": 99.95103,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินน้ำ",
+    "nameTh": "สนามบินน้ำ",
+    "nameEn": "สนามบินน้ำ",
+    "locationTh": "น้ำ",
+    "lat": 13.8809656,
+    "lng": 100.5005335,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินน้ำ?action=edit&redlink=1"
+  }
+]

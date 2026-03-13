@@ -21,7 +21,9 @@ import {
   ZoomOut,
   RotateCcw,
   Sun,
-  Moon
+  Moon,
+  Map as MapIcon,
+  X
 } from 'lucide-react';
 import { 
   BarChart, 
@@ -57,6 +59,7 @@ const TRANSLATIONS = {
     app_name: 'บริษัท วิทยุการบินแห่งประเทศไทย จำกัด',
     app_subtitle: 'แดชบอร์ดข้อมูลเที่ยวบิน',
     nav_overview: 'ภาพรวม',
+    nav_map: 'แผนที่ประเทศไทย',
     nav_airports: 'รายชื่อท่าอากาศยาน',
     nav_operations: 'การดำเนินงาน',
     nav_analytics: 'การวิเคราะห์',
@@ -81,18 +84,27 @@ const TRANSLATIONS = {
     chart_type_dist: 'สัดส่วนประเภทเที่ยวบิน',
     chart_ops_type: 'การดำเนินงานแยกตามประเภทเที่ยวบิน',
     airport_network_title: 'เครือข่ายท่าอากาศยานในประเทศไทย (แยกตามสังกัดต่างๆ)',
-    airport_network_desc: 'การตรวจสอบศูนย์กลางการบินหลักทั่วราชอาณาจักรไทย',
-    btn_view_all: 'ดูท่าอากาศยานทั้งหมด',
+    airport_network_desc: 'การตรวจสอบศูนย์กลางทางการบินทั่วราชอาณาจักรไทย',
+    btn_view_all: 'ดูรายชื่อท่าอากาศยานทั้งหมดในประเทศไทย',
     dir_title: 'รายชื่อท่าอากาศยานในสังกัดของ บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)',
     dir_doa_title: 'รายชื่อท่าอากาศยานในสังกัดของ กรมท่าอากาศยาน',
     dir_desc: 'ข้อมูลรายละเอียดสำหรับท่าอากาศยานในสังกัดของ บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)',
     dir_doa_desc: 'ข้อมูลรายละเอียดสำหรับท่าอากาศยานในสังกัด กรมท่าอากาศยาน',
     dir_army_title: 'รายชื่อท่าอากาศยานในสังกัดของ กองทัพบก',
     dir_army_desc: 'ข้อมูลรายละเอียดสำหรับท่าอากาศยานในสังกัด กองทัพบก',
+    dir_navy_title: 'รายชื่อท่าอากาศยานในสังกัดของ กองทัพเรือ',
+    dir_navy_desc: 'ข้อมูลรายละเอียดสำหรับท่าอากาศยานในสังกัด กองทัพเรือ',
+    dir_airforce_title: 'รายชื่อท่าอากาศยานในสังกัดของ กองทัพอากาศ',
+    dir_airforce_desc: 'ข้อมูลรายละเอียดสำหรับท่าอากาศยานในสังกัด กองทัพอากาศ',
+    dir_private_title: 'รายชื่อท่าอากาศยานของ หน่วยงานอื่นๆ / รัฐวิสาหกิจ / เอกชน',
+    dir_private_desc: 'ข้อมูลรายละเอียดสำหรับท่าอากาศยานเอกชน',
+    dir_closed_title: 'ท่าอากาศยานที่ยกเลิกการใช้งานแล้ว / ในอดีต',
+    dir_closed_desc: 'รายชื่อสนามบินที่ไม่ได้เปิดให้บริการแล้ว หรือเป็นสนามบินในอดีต',
     table_icao: 'รหัส ICAO',
     table_iata: 'รหัส IATA',
     table_name: 'ชื่อท่าอากาศยาน',
     table_location: 'จังหวัด',
+    table_owner: 'เจ้าของ/หน่วยงาน',
     table_type: 'ประเภท',
     table_actions: 'ดำเนินการ',
     table_details: 'รายละเอียด',
@@ -125,6 +137,7 @@ const TRANSLATIONS = {
     app_name: 'Aeronautical Radio of Thailand LTD.',
     app_subtitle: 'Flight Data Dashboard',
     nav_overview: 'Overview',
+    nav_map: 'Thailand Map',
     nav_airports: 'Airports',
     nav_operations: 'Operations',
     nav_analytics: 'Analytics',
@@ -148,19 +161,28 @@ const TRANSLATIONS = {
     chart_forecast: 'Monthly Traffic Trend (Forecast)',
     chart_type_dist: 'Flight Type Distribution',
     chart_ops_type: 'Flights Operations by Type',
-    airport_network_title: 'Thailand Airport Network (by Authority)',
-    airport_network_desc: 'Monitoring major hubs across the Kingdom of Thailand.',
-    btn_view_all: 'View All Airports',
+    airport_network_title: 'Thailand Airport Network (By Authority)',
+    airport_network_desc: 'Monitoring hubs across the Kingdom of Thailand.',
+    btn_view_all: 'View all airports in Thailand',
     dir_title: 'Airport Directory in control of Airports of Thailand Public Company Limited (AOT)',
     dir_doa_title: 'Airport Directory in control of Department of Airports (DOA)',
     dir_desc: 'Detailed metadata for key aeronautical facilities.',
     dir_doa_desc: 'Detailed metadata for airports under the Department of Airports.',
-    dir_army_title: 'Royal Thai Army Airport Directory',
+    dir_army_title: 'Airport Directory in control of Royal Thai Army (RTA)',
     dir_army_desc: 'Detailed information for airports under the Royal Thai Army',
+    dir_navy_title: 'Airport Directory in control of Royal Thai Navy (RTN)',
+    dir_navy_desc: 'Detailed information for airports under the Royal Thai Navy',
+    dir_airforce_title: 'Airport Directory in control of Royal Thai Air Force (RTAF)',
+    dir_airforce_desc: 'Detailed information for airports under the Royal Thai Air Force',
+    dir_private_title: 'Other / Private Authority Airport Directory',
+    dir_private_desc: 'Detailed information for private airports',
+    dir_closed_title: 'Closed / Historical Airports',
+    dir_closed_desc: 'Airports that are no longer in operation or were active in the past.',
     table_icao: 'ICAO Code',
     table_iata: 'IATA Code',
     table_name: 'Airport Name',
     table_location: 'Location',
+    table_owner: 'Owner/Operator',
     table_type: 'Type',
     table_actions: 'Actions',
     table_details: 'Details',
@@ -284,253 +306,862 @@ const FORECAST_DATA = [
   { month: 'Jun 26', monthTh: 'มิ.ย. 69', flights: 81500 },
 ];
 
-const AIRPORTS = [
-  { 
-    code: 'VTBS', 
-    iata: 'BKK', 
-    name: 'Suvarnabhumi Airport', 
-    nameTh: 'ท่าอากาศยานสุวรรณภูมิ', 
-    location: 'Samut Prakan', 
-    locationTh: 'สมุทรปราการ', 
-    type: 'International', 
-    lat: 13.69, 
-    lon: 100.75,
-    category: 'AOT',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Suvarnabhumi_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานสุวรรณภูมิ'
-  },
-  { 
-    code: 'VTBD', 
-    iata: 'DMK', 
-    name: 'Don Mueang International Airport', 
-    nameTh: 'ท่าอากาศยานดอนเมือง', 
-    location: 'Bangkok', 
-    locationTh: 'กรุงเทพมหานคร', 
-    type: 'International/Domestic', 
-    lat: 13.91, 
-    lon: 100.60,
-    category: 'AOT',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Don_Mueang_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานดอนเมือง'
-  },
-  { 
-    code: 'VTSP', 
-    iata: 'HKT', 
-    name: 'Phuket Airport', 
-    nameTh: 'ท่าอากาศยานภูเก็ต', 
-    location: 'Phuket', 
-    locationTh: 'ภูเก็ต', 
-    type: 'International', 
-    lat: 8.11, 
-    lon: 98.31, 
-    category: 'AOT',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Phuket_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานภูเก็ต'
-  },
-  { 
-    code: 'VTCC', 
-    iata: 'CNX', 
-    name: 'Chiang Mai Airport', 
-    nameTh: 'ท่าอากาศยานเชียงใหม่', 
-    location: 'Chiang Mai', 
-    locationTh: 'เชียงใหม่', 
-    type: 'International', 
-    lat: 18.77, 
-    lon: 98.96, 
-    category: 'AOT',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Chiang_Mai_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานเชียงใหม่'
-  },
-  { 
-    code: 'VTSS', 
-    iata: 'HDY', 
-    name: 'Hat Yai Airport', 
-    nameTh: 'ท่าอากาศยานหาดใหญ่', 
-    location: 'Songkhla', 
-    locationTh: 'สงขลา', 
-    type: 'International', 
-    lat: 6.93, 
-    lon: 100.39, 
-    category: 'AOT',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Hat_Yai_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานหาดใหญ่'
-  },
-  { 
-    code: 'VTCT', 
-    iata: 'CEI', 
-    name: 'Mae Fah Luang – Chiang Rai International Airport', 
-    nameTh: 'ท่าอากาศยานแม่ฟ้าหลวง เชียงราย', 
-    location: 'Chiang Rai', 
-    locationTh: 'เชียงราย', 
-    type: 'International', 
-    lat: 19.95, 
-    lon: 99.88,
-    category: 'AOT',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Mae_Fah_Luang_%E2%80%93_Chiang_Rai_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานแม่ฟ้าหลวง_เชียงราย'
-  },
-  // DOA Airports
-  { 
-    code: 'VTSG', 
-    iata: 'KBV', 
-    name: 'Krabi International Airport', 
-    nameTh: 'ท่าอากาศยานกระบี่', 
-    location: 'Krabi', 
-    locationTh: 'กระบี่', 
-    type: 'International', 
-    lat: 8.10, 
-    lon: 98.98, 
-    category: 'DOA',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Krabi_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานกระบี่'
-  },
-  { 
-    code: 'VTUD', 
-    iata: 'UTH', 
-    name: 'Udon Thani International Airport', 
-    nameTh: 'ท่าอากาศยานอุดรธานี', 
-    location: 'Udon Thani', 
-    locationTh: 'อุดรธานี', 
-    type: 'International', 
-    lat: 17.38, 
-    lon: 102.79, 
-    category: 'DOA',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Udon_Thani_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานอุดรธานี'
-  },
-  { 
-    code: 'VTSB', 
-    iata: 'URT', 
-    name: 'Surat Thani International Airport', 
-    nameTh: 'ท่าอากาศยานสุราษฎร์ธานี', 
-    location: 'Surat Thani', 
-    locationTh: 'สุราษฎร์ธานี', 
-    type: 'International', 
-    lat: 9.13, 
-    lon: 99.14, 
-    category: 'DOA',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Surat_Thani_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานสุราษฎร์ธานี'
-  },
-  { 
-    code: 'VTUU', 
-    iata: 'UBP', 
-    name: 'Ubon Ratchathani International Airport', 
-    nameTh: 'ท่าอากาศยานอุบลราชธานี', 
-    location: 'Ubon Ratchathani', 
-    locationTh: 'อุบลราชธานี', 
-    type: 'International', 
-    lat: 15.25, 
-    lon: 104.87, 
-    category: 'DOA',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Ubon_Ratchathani_International_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานอุบลราชธานี'
-  },
-  { 
-    code: 'VTUK', 
-    iata: 'KKC', 
-    name: 'Khon Kaen Airport', 
-    nameTh: 'ท่าอากาศยานขอนแก่น', 
-    location: 'Khon Kaen', 
-    locationTh: 'ขอนแก่น', 
-    type: 'Domestic', 
-    lat: 16.46, 
-    lon: 102.78, 
-    category: 'DOA',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Khon_Kaen_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานขอนแก่น'
-  },
-  { 
-    code: 'VTSF', 
-    iata: 'NST', 
-    name: 'Nakhon Si Thammarat Airport', 
-    nameTh: 'ท่าอากาศยานนครศรีธรรมราช', 
-    location: 'Nakhon Si Thammarat', 
-    locationTh: 'นครศรีธรรมราช', 
-    type: 'Domestic', 
-    lat: 8.54, 
-    lon: 99.94, 
-    category: 'DOA',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Nakhon_Si_Thammarat_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานนครศรีธรรมราช'
-  },
-  { 
-    code: 'VTUI', 
-    iata: 'MAH', 
-    name: 'Mae Hong Son Airport', 
-    nameTh: 'ท่าอากาศยานแม่ฮ่องสอน', 
-    location: 'Mae Hong Son', 
-    locationTh: 'แม่ฮ่องสอน', 
-    type: 'Domestic', 
-    lat: 19.30, 
-    lon: 97.97, 
-    category: 'DOA',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Mae_Hong_Son_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานแม่ฮ่องสอน'
-  },
-  { 
-    code: 'VTPH', 
-    iata: 'HHQ', 
-    name: 'Hua Hin Airport', 
-    nameTh: 'ท่าอากาศยานหัวหิน', 
-    location: 'Prachuap Khiri Khan', 
-    locationTh: 'ประจวบคีรีขันธ์', 
-    type: 'Domestic', 
-    lat: 12.63, 
-    lon: 99.95, 
-    category: 'DOA',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Hua_Hin_Airport',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/ท่าอากาศยานหัวหิน'
-  },
-  { 
-    code: 'VTBL', 
-    iata: 'LPR', 
-    name: 'Sa Prani Airfield (Army Aviation Center)', 
-    nameTh: 'สนามบินสระพรานี (ศูนย์การบินทหารบก)', 
-    location: 'Lopburi', 
-    locationTh: 'ลพบุรี', 
-    type: 'Military', 
-    lat: 14.85, 
-    lon: 100.65, 
-    category: 'ARMY',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Lopburi',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/จังหวัดลพบุรี'
-  },
-  { 
-    code: 'RTA-KN', 
-    iata: 'KNC', 
-    name: 'Fort Surasi Airfield', 
-    nameTh: 'สนามบินค่ายสุรสีห์', 
-    location: 'Kanchanaburi', 
-    locationTh: 'กาญจนบุรี', 
-    type: 'Military', 
-    lat: 14.10, 
-    lon: 99.48, 
-    category: 'ARMY',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Kanchanaburi',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/จังหวัดกาญจนบุรี'
-  },
-  { 
-    code: 'RTA-NR', 
-    iata: 'NAK', 
-    name: 'Fort Suranaree Airfield', 
-    nameTh: 'สนามบินค่ายสุรนารี', 
-    location: 'Nakhon Ratchasima', 
-    locationTh: 'นครราชสีมา', 
-    type: 'Military', 
-    lat: 14.93, 
-    lon: 102.10, 
-    category: 'ARMY',
-    wikiUrl: 'https://en.wikipedia.org/wiki/Nakhon_Ratchasima',
-    wikiUrlTh: 'https://th.wikipedia.org/wiki/จังหวัดนครราชสีมา'
-  },
-];
+interface Airport {
+  id: string;
+  iata?: string;
+  code?: string;
+  nameTh: string;
+  nameEn: string;
+  locationTh: string;
+  locationEn?: string;
+  lat: number;
+  lng: number;
+  category: string;
+  wikiUrlTh: string;
+}
 
-const ThailandMap = ({ airports, lang, theme }: { airports: any[], lang: string, theme: 'light' | 'dark' }) => {
+const AIRPORTS: Airport[] = [
+  {
+    "id": "VTBS",
+    "nameTh": "ท่าอากาศยานสุวรรณภูมิ",
+    "nameEn": "Suvarnabhumi Airport",
+    "locationTh": "สมุทรปราการ",
+    "lat": 13.6818767,
+    "lng": 100.7485803,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสุวรรณภูมิ"
+  },
+  {
+    "id": "VTBD",
+    "nameTh": "ท่าอากาศยานดอนเมือง",
+    "nameEn": "Don Mueang International Airport",
+    "locationTh": "กรุงเทพมหานคร",
+    "lat": 13.9122207,
+    "lng": 100.6035314,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานดอนเมือง"
+  },
+  {
+    "id": "VTCC",
+    "nameTh": "ท่าอากาศยานเชียงใหม่",
+    "nameEn": "Chiang Mai International Airport",
+    "locationTh": "เชียงใหม่",
+    "lat": 18.7695291,
+    "lng": 98.9692713,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานเชียงใหม่"
+  },
+  {
+    "id": "VTCT",
+    "nameTh": "ท่าอากาศยานแม่ฟ้าหลวง เชียงราย",
+    "nameEn": "Mae Fah Luang  - Chiang Rai International Airport",
+    "locationTh": "เชียงราย",
+    "lat": 19.9550586,
+    "lng": 99.879221,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานแม่ฟ้าหลวง_เชียงราย"
+  },
+  {
+    "id": "VTSS",
+    "nameTh": "ท่าอากาศยานหาดใหญ่",
+    "nameEn": "Hat Yai International Airport",
+    "locationTh": "สงขลา",
+    "lat": 6.9402579,
+    "lng": 100.3854062,
+    "category": "AOT",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานหาดใหญ่"
+  },
+  {
+    "id": "VTSG",
+    "nameTh": "ท่าอากาศยานนานาชาติกระบี่",
+    "nameEn": "Krabi International Airport",
+    "locationTh": "กระบี่",
+    "lat": 8.10083333,
+    "lng": 98.98472222,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติกระบี่"
+  },
+  {
+    "id": "VTUK",
+    "nameTh": "ท่าอากาศยานนานาชาติขอนแก่น",
+    "nameEn": "Khon Kaen International Airport",
+    "locationTh": "ขอนแก่น",
+    "lat": 16.46662778,
+    "lng": 102.78366111,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติขอนแก่น"
+  },
+  {
+    "id": "VTSE",
+    "nameTh": "ท่าอากาศยานชุมพร",
+    "nameEn": "Chumphon Airport",
+    "locationTh": "ชุมพร",
+    "lat": 10.7112,
+    "lng": 99.36170556,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานชุมพร"
+  },
+  {
+    "id": "VTST",
+    "nameTh": "ท่าอากาศยานตรัง",
+    "nameEn": "Trang Airport",
+    "locationTh": "ตรัง",
+    "lat": 7.508256,
+    "lng": 99.6152278,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานตรัง"
+  },
+  {
+    "id": "VTPM",
+    "nameTh": "ท่าอากาศยานนานาชาติแม่สอด",
+    "nameEn": "Mae Sot International Airport",
+    "locationTh": "ตาก",
+    "lat": 16.69972222,
+    "lng": 98.545,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติแม่สอด"
+  },
+  {
+    "id": "VTUW",
+    "nameTh": "ท่าอากาศยานนครพนม",
+    "nameEn": "Nakhon Phanom Airport",
+    "locationTh": "นครพนม",
+    "lat": 17.3831775,
+    "lng": 104.6444264,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนครพนม"
+  },
+  {
+    "id": "VTUQ",
+    "nameTh": "ท่าอากาศยานนครราชสีมา",
+    "nameEn": "Nakhon Ratchasima Airport",
+    "locationTh": "นครราชสีมา",
+    "lat": 14.9486292,
+    "lng": 102.3087089,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนครราชสีมา"
+  },
+  {
+    "id": "VTSF",
+    "nameTh": "ท่าอากาศยานนานาชาตินครศรีธรรมราช",
+    "nameEn": "Nakhon Si Thammarat International Airport",
+    "locationTh": "นครศรีธรรมราช",
+    "lat": 8.5361535,
+    "lng": 99.9432125,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาตินครศรีธรรมราช"
+  },
+  {
+    "id": "VTSC",
+    "nameTh": "ท่าอากาศยานนราธิวาส",
+    "nameEn": "Narathiwat Airport",
+    "locationTh": "นราธิวาส",
+    "lat": 6.5138138,
+    "lng": 101.7408213,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนราธิวาส"
+  },
+  {
+    "id": "VTCN",
+    "nameTh": "ท่าอากาศยานน่านนคร",
+    "nameEn": "Nan Nakhon Airport",
+    "locationTh": "น่าน",
+    "lat": 18.80777778,
+    "lng": 100.78333333,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานน่านนคร"
+  },
+  {
+    "id": "VTUO",
+    "nameTh": "ท่าอากาศยานบุรีรัมย์",
+    "nameEn": "Buriram Airport",
+    "locationTh": "บุรีรัมย์",
+    "lat": 15.2251616,
+    "lng": 103.2477758,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานบุรีรัมย์"
+  },
+  {
+    "id": "VTPH",
+    "nameTh": "ท่าอากาศยานหัวหิน",
+    "nameEn": "Hua Hin Airport",
+    "locationTh": "ประจวบคีรีขันธ์",
+    "lat": 12.6368554,
+    "lng": 99.9510278,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานหัวหิน"
+  },
+  {
+    "id": "VTPP",
+    "nameTh": "ท่าอากาศยานพิษณุโลก",
+    "nameEn": "Phitsanulok Airport",
+    "locationTh": "พิษณุโลก",
+    "lat": 16.7815939,
+    "lng": 100.2746632,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานพิษณุโลก"
+  },
+  {
+    "id": "VTCP",
+    "nameTh": "ท่าอากาศยานแพร่",
+    "nameEn": "Phrae Airport",
+    "locationTh": "แพร่",
+    "lat": 18.1317123,
+    "lng": 100.1636829,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานแพร่"
+  },
+  {
+    "id": "VTCH",
+    "nameTh": "ท่าอากาศยานแม่ฮ่องสอน",
+    "nameEn": "Mae Hong Son Airport",
+    "locationTh": "แม่ฮ่องสอน",
+    "lat": 19.301074,
+    "lng": 97.9758393,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานแม่ฮ่องสอน"
+  },
+  {
+    "id": "VTSY",
+    "nameTh": "ท่าอากาศยานนานาชาติเบตง",
+    "nameEn": "Betong International Airport",
+    "locationTh": "ยะลา",
+    "lat": 5.789387,
+    "lng": 101.1497593,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติเบตง"
+  },
+  {
+    "id": "VTUV",
+    "nameTh": "ท่าอากาศยานร้อยเอ็ด",
+    "nameEn": "Roi Et Airport",
+    "locationTh": "ร้อยเอ็ด",
+    "lat": 16.1150394,
+    "lng": 103.7748535,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานร้อยเอ็ด"
+  },
+  {
+    "id": "VTSR",
+    "nameTh": "ท่าอากาศยานระนอง",
+    "nameEn": "Ranong Airport",
+    "locationTh": "ระนอง",
+    "lat": 9.777307,
+    "lng": 98.5863199,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานระนอง"
+  },
+  {
+    "id": "VTUL",
+    "nameTh": "ท่าอากาศยานเลย",
+    "nameEn": "Loei Airport",
+    "locationTh": "เลย",
+    "lat": 17.4377964,
+    "lng": 101.7213999,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานเลย"
+  },
+  {
+    "id": "VTCL",
+    "nameTh": "ท่าอากาศยานลำปาง",
+    "nameEn": "Lampang Airport",
+    "locationTh": "ลำปาง",
+    "lat": 18.2681639,
+    "lng": 99.5043039,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานลำปาง"
+  },
+  {
+    "id": "VTUI",
+    "nameTh": "ท่าอากาศยานสกลนคร",
+    "nameEn": "Sakon Nakhon Airport",
+    "locationTh": "สกลนคร",
+    "lat": 17.1958129,
+    "lng": 104.1182177,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสกลนคร"
+  },
+  {
+    "id": "VTSB",
+    "nameTh": "ท่าอากาศยานนานาชาติสุราษฎร์ธานี",
+    "nameEn": "Surat Thani International Airport",
+    "locationTh": "สุราษฎร์ธานี",
+    "lat": 9.1325,
+    "lng": 99.13555556,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติสุราษฎร์ธานี"
+  },
+  {
+    "id": "VTUD",
+    "nameTh": "ท่าอากาศยานนานาชาติอุดรธานี",
+    "nameEn": "Udon Thani International Airport",
+    "locationTh": "อุดรธานี",
+    "lat": 17.3856715,
+    "lng": 102.7869599,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติอุดรธานี"
+  },
+  {
+    "id": "VTUU",
+    "nameTh": "ท่าอากาศยานนานาชาติอุบลราชธานี",
+    "nameEn": "Ubon Ratchathani International Airport",
+    "locationTh": "อุบลราชธานี",
+    "lat": 15.246905,
+    "lng": 104.870735,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติอุบลราชธานี"
+  },
+  {
+    "id": "VTBO",
+    "nameTh": "ท่าอากาศยานตราด",
+    "nameEn": "Trat Airport",
+    "locationTh": "ตราด",
+    "lat": 12.2808021,
+    "lng": 102.3236367,
+    "category": "PRIVATE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานตราด"
+  },
+  {
+    "id": "VTBU",
+    "nameTh": "ท่าอากาศยานนานาชาติอู่ตะเภา (ระยอง–พัทยา)",
+    "nameEn": "U-Tapao International Airport",
+    "locationTh": "ระยอง",
+    "lat": 12.68,
+    "lng": 101.005,
+    "category": "NAVY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติอู่ตะเภา_(ระยอง–พัทยา)"
+  },
+  {
+    "id": "VTSM",
+    "nameTh": "ท่าอากาศยานนานาชาติสมุย",
+    "nameEn": "Samui International Airport",
+    "locationTh": "สุราษฎร์ธานี",
+    "lat": 9.5488263,
+    "lng": 100.0631993,
+    "category": "PRIVATE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติสมุย"
+  },
+  {
+    "id": "VTPO",
+    "nameTh": "ท่าอากาศยานสุโขทัย",
+    "nameEn": "Sukhothai Airport",
+    "locationTh": "สุโขทัย",
+    "lat": 17.2355871,
+    "lng": 99.8215677,
+    "category": "PRIVATE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสุโขทัย"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินกาญจนบุรี ค่ายสุรสีห์",
+    "nameEn": "สนามบินกาญจนบุรี ค่ายสุรสีห์",
+    "locationTh": "กาญจนบุรี",
+    "lat": 14.1258614,
+    "lng": 99.4469827,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินกาญจนบุรี_ค่ายสุรสีห์?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินพระลับ",
+    "nameEn": "สนามบินพระลับ",
+    "locationTh": "ขอนแก่น",
+    "lat": 16.4394252,
+    "lng": 102.8379626,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินพระลับ?action=edit&redlink=1"
+  },
+  {
+    "id": "VTBC",
+    "nameTh": "สนามบินจันทบุรี",
+    "nameEn": "Chanthaburi Airstrip",
+    "locationTh": "จันทบุรี",
+    "lat": 12.6316279,
+    "lng": 102.0254242,
+    "category": "NAVY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินจันทบุรี"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินชัยภูมิ",
+    "nameEn": "สนามบินชัยภูมิ",
+    "locationTh": "ชัยภูมิ",
+    "lat": 15.7685472,
+    "lng": 101.9462291,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินชัยภูมิ?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินภูเขียว",
+    "nameEn": "สนามบินภูเขียว",
+    "locationTh": "ชัยภูมิ",
+    "lat": 16.3612207,
+    "lng": 102.1588262,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินภูเขียว?action=edit&redlink=1"
+  },
+  {
+    "id": "VTCR",
+    "nameTh": "สนามบินเชียงราย",
+    "nameEn": "Chiang Rai Airport",
+    "locationTh": "เชียงราย",
+    "lat": 19.8896906,
+    "lng": 99.8276212,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ฐานบินเชียงราย"
+  },
+  {
+    "id": "VTBV",
+    "nameTh": "สนามบินเกาะตะเคียน[3]",
+    "nameEn": "Koh Takian Airport",
+    "locationTh": "ตราด",
+    "lat": 12.2542802,
+    "lng": 102.5181282,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินเกาะตะเคียน?action=edit&redlink=1"
+  },
+  {
+    "id": "VTPT",
+    "nameTh": "ท่าอากาศยานตาก",
+    "nameEn": "Tak Airport",
+    "locationTh": "ตาก",
+    "lat": 16.8978868,
+    "lng": 99.2545255,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานตาก"
+  },
+  {
+    "id": "VTBK",
+    "nameTh": "สนามบินกำแพงแสน",
+    "nameEn": "Kamphaeng Saen Airport",
+    "locationTh": "นครปฐม",
+    "lat": 14.1008976,
+    "lng": 99.9184437,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินกำแพงแสน"
+  },
+  {
+    "id": "VTSN",
+    "nameTh": "สนามบินชะเอียน",
+    "nameEn": "Cha Eian Airport",
+    "locationTh": "นครศรีธรรมราช",
+    "lat": 8.4701019,
+    "lng": 99.9566766,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินชะเอียน"
+  },
+  {
+    "id": "VTBP",
+    "nameTh": "สนามบินประจวบคีรีขันธ์[7]",
+    "nameEn": "Prachuap Khiri Khan Military Airport",
+    "locationTh": "ประจวบคีรีขันธ์",
+    "lat": 12.3894114,
+    "lng": 99.9576335,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินประจวบคีรีขันธ์?action=edit&redlink=1"
+  },
+  {
+    "id": "VTBI",
+    "nameTh": "สนามบินปราจีนบุรี",
+    "nameEn": "Prachin Buri Airport",
+    "locationTh": "ปราจีนบุรี",
+    "lat": 14.0203098,
+    "lng": 101.7027009,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินปราจีนบุรี"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินกบินทร์บุรี",
+    "nameEn": "Kabinburi Airport",
+    "locationTh": "ปราจีนบุรี",
+    "lat": 14.0203098,
+    "lng": 101.7027009,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินกบินทร์บุรี?action=edit&redlink=1"
+  },
+  {
+    "id": "VTSK",
+    "nameTh": "ท่าอากาศยานปัตตานี",
+    "nameEn": "Pattani Airport",
+    "locationTh": "ปัตตานี",
+    "lat": 6.7854878,
+    "lng": 101.1527689,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานปัตตานี"
+  },
+  {
+    "id": "VTPB",
+    "nameTh": "ท่าอากาศยานเพชรบูรณ์",
+    "nameEn": "Phetchabun Airport",
+    "locationTh": "เพชรบูรณ์",
+    "lat": 16.6758588,
+    "lng": 101.1905078,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานเพชรบูรณ์"
+  },
+  {
+    "id": "VTCI",
+    "nameTh": "ท่าอากาศยานปาย",
+    "nameEn": "Pai Airport",
+    "locationTh": "แม่ฮ่องสอน",
+    "lat": 19.372147,
+    "lng": 98.4358962,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานปาย"
+  },
+  {
+    "id": "VTCS",
+    "nameTh": "สนามบินแม่สะเรียง",
+    "nameEn": "Mae Sariang Airport",
+    "locationTh": "แม่ฮ่องสอน",
+    "lat": 18.1785145,
+    "lng": 97.930412,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินแม่สะเรียง"
+  },
+  {
+    "id": "VTUR",
+    "nameTh": "สนามบินรอบเมือง",
+    "nameEn": "Rob Mueang Airport",
+    "locationTh": "ร้อยเอ็ด",
+    "lat": 16.068234,
+    "lng": 103.6444632,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินรอบเมือง?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินราชบุรี",
+    "nameEn": "สนามบินราชบุรี",
+    "locationTh": "ราชบุรี",
+    "lat": 13.7599119,
+    "lng": 100.5238726,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินราชบุรี"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินบ้านเชียงเครือ",
+    "nameEn": "สนามบินบ้านเชียงเครือ",
+    "locationTh": "สกลนคร",
+    "lat": 17.295209,
+    "lng": 104.1127873,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินบ้านเชียงเครือ?action=edit&redlink=1"
+  },
+  {
+    "id": "VTSH",
+    "nameTh": "ท่าอากาศยานสงขลา",
+    "nameEn": "Songkhla Airport",
+    "locationTh": "สงขลา",
+    "lat": 7.1863834,
+    "lng": 100.6068419,
+    "category": "NAVY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสงขลา"
+  },
+  {
+    "id": "VTSA",
+    "nameTh": "สนามบินควนขัน",
+    "nameEn": "Khuan Khan Airport",
+    "locationTh": "สตูล",
+    "lat": 6.662243,
+    "lng": 100.0800349,
+    "category": "AIRFORCE",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินควนขัน?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินสวรรคโลก",
+    "nameEn": "สนามบินสวรรคโลก",
+    "locationTh": "สุโขทัย",
+    "lat": 17.2355871,
+    "lng": 99.8215677,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินสวรรคโลก?action=edit&redlink=1"
+  },
+  {
+    "id": "-",
+    "nameTh": "สนามบินสุพรรณบุรี",
+    "nameEn": "สนามบินสุพรรณบุรี",
+    "locationTh": "สุพรรณบุรี",
+    "lat": 15.2280823,
+    "lng": 103.2478275,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินสุพรรณบุรี?action=edit&redlink=1"
+  },
+  {
+    "id": "VTUJ",
+    "nameTh": "ท่าอากาศยานสุรินทร์ภักดี",
+    "nameEn": "Surin Bhakdi Airport",
+    "locationTh": "สุรินทร์",
+    "lat": 14.8668057,
+    "lng": 103.4979606,
+    "category": "ARMY",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานสุรินทร์ภักดี"
+  },
+  {
+    "id": "-",
+    "nameTh": "ท่าอากาศยานนานาชาติบึงกาฬ",
+    "nameEn": "Bueng Kan International Airport",
+    "locationTh": "บึงกาฬ",
+    "lat": 18.33,
+    "lng": 103.56194444,
+    "category": "DOA",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/ท่าอากาศยานนานาชาติบึงกาฬ"
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ชลบุรี",
+    "lat": 13.3662087,
+    "lng": 100.9872185,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ชลบุรี",
+    "lat": 13.3662087,
+    "lng": 100.9872185,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ตาก",
+    "lat": 16.8722576,
+    "lng": 99.1248355,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ตราด",
+    "lat": 12.2440564,
+    "lng": 102.5122822,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "พะเยา",
+    "lat": 19.1667813,
+    "lng": 99.9021075,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ยโสธร",
+    "lat": 15.7926751,
+    "lng": 104.1452903,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ราชบุรี",
+    "lat": 13.539067,
+    "lng": 99.8197035,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "",
+    "nameTh": "",
+    "nameEn": "",
+    "locationTh": "ลพบุรี",
+    "lat": 14.8023289,
+    "lng": 100.6146858,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ลำพูน",
+    "lat": 18.5776383,
+    "lng": 99.0069034,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ลำพูน",
+    "lat": 18.5776383,
+    "lng": 99.0069034,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "-",
+    "nameTh": "-",
+    "nameEn": "-",
+    "locationTh": "ลำพูน",
+    "lat": 18.5776383,
+    "lng": 99.0069034,
+    "category": "PRIVATE",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดสุพรรณบุรี",
+    "nameTh": "สนามบินจังหวัดสุพรรณบุรี",
+    "nameEn": "สนามบินจังหวัดสุพรรณบุรี",
+    "locationTh": "สุพรรณบุรี",
+    "lat": 15.2280823,
+    "lng": 103.2478275,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดสวรรคโลก",
+    "nameTh": "สนามบินจังหวัดสวรรคโลก",
+    "nameEn": "สนามบินจังหวัดสวรรคโลก",
+    "locationTh": "สวรรคโลก",
+    "lat": 17.2355871,
+    "lng": 99.8215677,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดอุตรดิตถ์",
+    "nameTh": "สนามบินจังหวัดอุตรดิตถ์",
+    "nameEn": "สนามบินจังหวัดอุตรดิตถ์",
+    "locationTh": "อุตรดิตถ์",
+    "lat": 17.6735746,
+    "lng": 100.2334897,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดชัยภูมิ",
+    "nameTh": "สนามบินจังหวัดชัยภูมิ",
+    "nameEn": "สนามบินจังหวัดชัยภูมิ",
+    "locationTh": "ชัยภูมิ",
+    "lat": 15.7685472,
+    "lng": 101.9462291,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดพิษณุโลก",
+    "nameTh": "สนามบินจังหวัดพิษณุโลก",
+    "nameEn": "สนามบินจังหวัดพิษณุโลก",
+    "locationTh": "พิษณุโลก",
+    "lat": 16.7962228,
+    "lng": 100.274489,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดราชบุรี",
+    "nameTh": "สนามบินจังหวัดราชบุรี",
+    "nameEn": "สนามบินจังหวัดราชบุรี",
+    "locationTh": "ราชบุรี",
+    "lat": 13.6705751,
+    "lng": 99.7326947,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดสุโขทัย",
+    "nameTh": "สนามบินจังหวัดสุโขทัย",
+    "nameEn": "สนามบินจังหวัดสุโขทัย",
+    "locationTh": "สุโขทัย",
+    "lat": 17.2355871,
+    "lng": 99.8215677,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดเพชรบูรณ์",
+    "nameTh": "สนามบินจังหวัดเพชรบูรณ์",
+    "nameEn": "สนามบินจังหวัดเพชรบูรณ์",
+    "locationTh": "เพชรบูรณ์",
+    "lat": 16.8243008,
+    "lng": 101.2509995,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดน่าน",
+    "nameTh": "สนามบินจังหวัดน่าน",
+    "nameEn": "สนามบินจังหวัดน่าน",
+    "locationTh": "น่าน",
+    "lat": 18.5462625,
+    "lng": 99.0119009,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินจังหวัดเพชรบุรี",
+    "nameTh": "สนามบินจังหวัดเพชรบุรี",
+    "nameEn": "สนามบินจังหวัดเพชรบุรี",
+    "locationTh": "เพชรบุรี",
+    "lat": 12.6270148,
+    "lng": 99.95103,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินหัวหิน",
+    "nameTh": "สนามบินหัวหิน",
+    "nameEn": "สนามบินหัวหิน",
+    "locationTh": "หัวหิน",
+    "lat": 12.6270148,
+    "lng": 99.95103,
+    "category": "CLOSED",
+    "wikiUrlTh": null
+  },
+  {
+    "id": "สนามบินน้ำ",
+    "nameTh": "สนามบินน้ำ",
+    "nameEn": "สนามบินน้ำ",
+    "locationTh": "น้ำ",
+    "lat": 13.8809656,
+    "lng": 100.5005335,
+    "category": "CLOSED",
+    "wikiUrlTh": "https://th.wikipedia.org/wiki/สนามบินน้ำ?action=edit&redlink=1"
+  }
+];;
+
+const LOGO_MAP: Record<string, string> = {
+  AOT: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Airports_of_Thailand_Logo.svg/3840px-Airports_of_Thailand_Logo.svg.png',
+  DOA: 'https://www.airports.go.th/backend/uploads/tiny_uploads/โลโก้%20กรมท่าอากาศยาน%20(1)1.png?1712804985393',
+  ARMY: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Emblem_of_the_Royal_Thai_Army.svg/960px-Emblem_of_the_Royal_Thai_Army.svg.png',
+  NAVY: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Emblem_of_the_Royal_Thai_Navy.svg/960px-Emblem_of_the_Royal_Thai_Navy.svg.png',
+  AIRFORCE: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Emblem_of_the_Royal_Thai_Air_Force.svg/3840px-Emblem_of_the_Royal_Thai_Air_Force.svg.png',
+  PRIVATE: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Bangkok_Airways_Logo.svg/3840px-Bangkok_Airways_Logo.svg.png',
+  CLOSED: 'https://cdn-icons-png.flaticon.com/512/1042/1042339.png'
+};
+
+const ThailandMap = ({ airports, lang, theme, className, containerClassName }: { airports: any[], lang: string, theme: 'light' | 'dark', className?: string, containerClassName?: string }) => {
+  const [selectedAirport, setSelectedAirport] = useState<any>(null);
+  const [hoveredAirport, setHoveredAirport] = useState<any>(null);
+  const [transformState, setTransformState] = useState({ scale: 1, positionX: 0, positionY: 0 });
+
   // Simple projection: Thailand bounds roughly 5.5N-20.5N, 97.3E-105.7E
   // We'll map these to a 300x500 SVG
-  const mapWidth = 300;
-  const mapHeight = 500;
+  const mapWidth = 1280;
+  const mapHeight = 2200;
   
   const project = (lat: number, lon: number) => {
     // Adjusted projection for the specific image layout
@@ -542,13 +1173,17 @@ const ThailandMap = ({ airports, lang, theme }: { airports: any[], lang: string,
   return (
     <div className={cn(
       "relative w-full h-full flex flex-col rounded-xl overflow-hidden border transition-colors duration-300",
-      theme === 'dark' ? "bg-slate-900/50 border-slate-700" : "bg-slate-50/50 border-slate-100"
+      theme === 'dark' ? "bg-slate-900/50 border-slate-700" : "bg-slate-50/50 border-slate-100",
+      containerClassName
     )}>
       <TransformWrapper
         initialScale={1}
         minScale={1}
         maxScale={8}
         centerOnInit={true}
+        onTransformed={(ref) => setTransformState(ref.state)}
+        onPanning={(ref) => setTransformState(ref.state)}
+        onZooming={(ref) => setTransformState(ref.state)}
       >
         {({ zoomIn, zoomOut, resetTransform }) => (
           <>
@@ -592,15 +1227,15 @@ const ThailandMap = ({ airports, lang, theme }: { airports: any[], lang: string,
               </button>
             </div>
 
-            <div className="flex-1 w-full h-full flex items-center justify-center p-4">
+            <div className="flex-1 w-full flex items-center justify-center overflow-hidden">
               <TransformComponent wrapperClassName="!w-full !h-full" contentClassName="!w-full !h-full flex items-center justify-center">
-                <div className="relative w-full h-full max-h-[450px] aspect-[3/5]">
+                <div className={cn("relative flex items-center justify-center", className)}>
                   {/* Background Map Image */}
                   <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Map_TH_provinces_by_thaimed.png" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/BlankMap-Thailand-provinces.svg/1280px-BlankMap-Thailand-provinces.svg.png" 
                     alt="Thailand Map"
                     className={cn(
-                      "w-full h-full object-contain select-none pointer-events-none transition-opacity duration-300",
+                      "w-full h-auto object-contain select-none pointer-events-none transition-opacity duration-300 block",
                       theme === 'dark' ? "opacity-40 grayscale invert" : "opacity-80"
                     )}
                     referrerPolicy="no-referrer"
@@ -615,21 +1250,45 @@ const ThailandMap = ({ airports, lang, theme }: { airports: any[], lang: string,
                       const { x, y } = project(airport.lat, airport.lon);
                       const isAOT = airport.category === 'AOT';
                       const isARMY = airport.category === 'ARMY';
+                      const isNAVY = airport.category === 'NAVY';
+                      const isAIRFORCE = airport.category === 'AIRFORCE';
+                      const isPRIVATE = airport.category === 'PRIVATE';
+                      const isCLOSED = airport.category === 'CLOSED';
                       return (
-                        <g key={airport.code} className="group pointer-events-auto cursor-pointer">
+                        <g 
+                          key={airport.code + airport.name} 
+                          className="group pointer-events-auto cursor-pointer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedAirport(airport);
+                          }}
+                          onMouseEnter={() => setHoveredAirport(airport)}
+                          onMouseLeave={() => setHoveredAirport(null)}
+                        >
+                          {/* Invisible Hit Area */}
+                          <circle cx={x} cy={y} r="20" fill="transparent" />
+                          
                           <motion.circle
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             cx={x}
                             cy={y}
-                            r="5"
+                            r="7"
                             className={cn(
-                              "stroke-2 shadow-sm",
+                              "stroke-[0.5] shadow-sm transition-all duration-300 group-hover:r-10",
                               isAOT 
-                                ? (theme === 'dark' ? "fill-indigo-400 stroke-slate-900" : "fill-indigo-600 stroke-white")
+                                ? (theme === 'dark' ? "fill-red-500 stroke-slate-900" : "fill-red-600 stroke-white")
                                 : isARMY
-                                  ? (theme === 'dark' ? "fill-red-400 stroke-slate-900" : "fill-red-600 stroke-white")
-                                  : (theme === 'dark' ? "fill-amber-400 stroke-slate-900" : "fill-amber-600 stroke-white")
+                                  ? (theme === 'dark' ? "fill-green-700 stroke-slate-900" : "fill-green-800 stroke-white")
+                                  : isNAVY
+                                    ? (theme === 'dark' ? "fill-blue-600 stroke-slate-900" : "fill-blue-800 stroke-white")
+                                    : isAIRFORCE
+                                      ? (theme === 'dark' ? "fill-sky-300 stroke-slate-900" : "fill-sky-400 stroke-white")
+                                      : isPRIVATE
+                                        ? (theme === 'dark' ? "fill-purple-400 stroke-slate-900" : "fill-purple-600 stroke-white")
+                                        : isCLOSED
+                                          ? (theme === 'dark' ? "fill-stone-600 stroke-slate-900" : "fill-stone-800 stroke-white")
+                                          : (theme === 'dark' ? "fill-amber-400 stroke-slate-900" : "fill-amber-600 stroke-white")
                             )}
                           />
                           <motion.circle
@@ -638,17 +1297,25 @@ const ThailandMap = ({ airports, lang, theme }: { airports: any[], lang: string,
                             transition={{ repeat: Infinity, duration: 2 }}
                             cx={x}
                             cy={y}
-                            r="5"
+                            r="7"
                             className={isAOT 
-                              ? (theme === 'dark' ? "fill-indigo-400/50" : "fill-indigo-400/50")
+                              ? (theme === 'dark' ? "fill-red-500/50" : "fill-red-600/50")
                               : isARMY
-                                ? (theme === 'dark' ? "fill-red-400/50" : "fill-red-400/50")
-                                : (theme === 'dark' ? "fill-amber-400/50" : "fill-amber-400/50")
+                                ? (theme === 'dark' ? "fill-green-700/50" : "fill-green-800/50")
+                                : isNAVY
+                                  ? (theme === 'dark' ? "fill-blue-600/50" : "fill-blue-800/50")
+                                  : isAIRFORCE
+                                    ? (theme === 'dark' ? "fill-sky-300/50" : "fill-sky-400/50")
+                                    : isPRIVATE
+                                      ? (theme === 'dark' ? "fill-purple-400/50" : "fill-purple-400/50")
+                                      : isCLOSED
+                                        ? (theme === 'dark' ? "fill-stone-600/50" : "fill-stone-800/50")
+                                        : (theme === 'dark' ? "fill-amber-400/50" : "fill-amber-400/50")
                             }
                           />
                           <text
                             x={x + 10}
-                            y={y + 4}
+                            y={y + 3}
                             className={cn(
                               "text-[12px] font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none drop-shadow-sm",
                               theme === 'dark' ? "fill-slate-200" : "fill-slate-800"
@@ -660,6 +1327,206 @@ const ThailandMap = ({ airports, lang, theme }: { airports: any[], lang: string,
                       );
                     })}
                   </svg>
+
+                  <AnimatePresence>
+                    {/* Airport Detail Popup - Positioned next to pin */}
+                    {selectedAirport && (() => {
+                      const { x, y } = project(selectedAirport.lat, selectedAirport.lon);
+                      const scale = transformState.scale || 1;
+                      const leftSideAirports = ['VTUI', 'VTUW', 'VTUV', 'VTUO', 'VTUU'];
+                      const isLeftSide = leftSideAirports.includes(selectedAirport.code);
+                      
+                      return (
+                        <div
+                          key="selected-airport-popup"
+                          className="absolute z-50 pointer-events-none"
+                          style={{
+                            left: x,
+                            top: y,
+                            transform: isLeftSide 
+                              ? `translate(calc(-100% - ${20 / scale}px), -50%) scale(${1 / scale})`
+                              : `translate(${20 / scale}px, -50%) scale(${1 / scale})`,
+                            transformOrigin: isLeftSide ? 'right center' : 'left center'
+                          }}
+                        >
+                        <div className="pointer-events-auto">
+                          <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -50 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            className={cn(
+                              "w-96 rounded-xl border shadow-xl overflow-hidden",
+                              theme === 'dark' ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"
+                            )}
+                          >
+                            {/* Header */}
+                            <div className={cn(
+                              "p-3 border-b flex items-center justify-between",
+                              theme === 'dark' ? "border-slate-700 bg-slate-900/50" : "border-slate-100 bg-slate-50/50"
+                            )}>
+                              <div className="flex items-center gap-2">
+                                <div className={cn(
+                                  "w-2 h-2 rounded-full",
+                                  selectedAirport.category === 'AOT' ? "bg-red-600" :
+                                  selectedAirport.category === 'ARMY' ? "bg-green-800" :
+                                  selectedAirport.category === 'NAVY' ? "bg-blue-700" :
+                                  selectedAirport.category === 'AIRFORCE' ? "bg-sky-400" :
+                                  selectedAirport.category === 'PRIVATE' ? "bg-purple-500" : 
+                                  selectedAirport.category === 'CLOSED' ? "bg-stone-800" : "bg-amber-500"
+                                )} />
+                                <span className={cn("text-[10px] font-bold uppercase tracking-wider", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>
+                                  {selectedAirport.iata} / {selectedAirport.code}
+                                </span>
+                              </div>
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setSelectedAirport(null);
+                                }}
+                                className={cn(
+                                  "p-1 rounded-full transition-colors",
+                                  theme === 'dark' ? "hover:bg-slate-700 text-slate-400" : "hover:bg-slate-100 text-slate-500"
+                                )}
+                              >
+                                <X size={14} />
+                              </button>
+                            </div>
+
+                            {/* Content */}
+                            <div className="p-4 space-y-4">
+                              <div className="flex justify-between items-start gap-3">
+                                <div className="flex-1">
+                                  <h3 className={cn("text-base font-bold mb-1 leading-tight", theme === 'dark' ? "text-white" : "text-slate-900")}>
+                                    {lang === 'th' ? selectedAirport.nameTh : selectedAirport.name}
+                                  </h3>
+                                  <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                                    <MapPin size={12} />
+                                    <span>{lang === 'th' ? selectedAirport.locationTh : selectedAirport.location}</span>
+                                  </div>
+                                </div>
+                                {LOGO_MAP[selectedAirport.category] && (
+                                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                                    <img 
+                                      src={LOGO_MAP[selectedAirport.category]} 
+                                      alt={selectedAirport.category} 
+                                      className="max-w-full max-h-full object-contain"
+                                      referrerPolicy="no-referrer"
+                                    />
+                                  </div>
+                                )}
+                              </div>
+
+                              <div className="grid grid-cols-2 gap-3">
+                                <div className={cn("p-2.5 rounded-lg border", theme === 'dark' ? "bg-slate-900/50 border-slate-700" : "bg-slate-50 border-slate-100")}>
+                                  <p className="text-[9px] uppercase tracking-wider text-slate-500 mb-1">{lang === 'th' ? 'ประเภท' : 'Type'}</p>
+                                  <p className={cn("text-xs font-medium truncate", theme === 'dark' ? "text-slate-300" : "text-slate-700")}>{selectedAirport.type}</p>
+                                </div>
+                                <div className={cn("p-2.5 rounded-lg border", theme === 'dark' ? "bg-slate-900/50 border-slate-700" : "bg-slate-50 border-slate-100")}>
+                                  <p className="text-[9px] uppercase tracking-wider text-slate-500 mb-1">{lang === 'th' ? 'หน่วยงานในสังกัด' : 'Authority'}</p>
+                                  <p className={cn("text-xs font-medium truncate", theme === 'dark' ? "text-slate-300" : "text-slate-700")} title={
+                                    selectedAirport.category === 'AOT' ? (lang === 'th' ? 'บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)' : 'AOT') :
+                                    selectedAirport.category === 'ARMY' ? (lang === 'th' ? 'กองทัพบก' : 'Army') :
+                                    selectedAirport.category === 'NAVY' ? (lang === 'th' ? 'กองทัพเรือ' : 'Navy') :
+                                    selectedAirport.category === 'AIRFORCE' ? (lang === 'th' ? 'กองทัพอากาศ' : 'Air Force') :
+                                    selectedAirport.category === 'PRIVATE' ? (lang === 'th' ? 'หน่วยงานอื่นๆ / รัฐวิสาหกิจ / เอกชน' : 'Private') : 
+                                    selectedAirport.category === 'CLOSED' ? (lang === 'th' ? 'ท่าอากาศยานที่เลิกใช้แล้ว' : 'Closed') :
+                                    (lang === 'th' ? 'กรมท่าอากาศยาน' : 'DOA')
+                                  }>
+                                    {selectedAirport.category === 'AOT' ? (lang === 'th' ? 'บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)' : 'AOT') :
+                                     selectedAirport.category === 'ARMY' ? (lang === 'th' ? 'กองทัพบก' : 'Army') :
+                                     selectedAirport.category === 'NAVY' ? (lang === 'th' ? 'กองทัพเรือ' : 'Navy') :
+                                     selectedAirport.category === 'AIRFORCE' ? (lang === 'th' ? 'กองทัพอากาศ' : 'Air Force') :
+                                     selectedAirport.category === 'PRIVATE' ? (lang === 'th' ? 'หน่วยงานอื่นๆ / รัฐวิสาหกิจ / เอกชน' : 'Private') : 
+                                     selectedAirport.category === 'CLOSED' ? (lang === 'th' ? 'ท่าอากาศยานที่เลิกใช้แล้ว' : 'Closed') :
+                                     (lang === 'th' ? 'กรมท่าอากาศยาน' : 'DOA')}
+                                  </p>
+                                </div>
+                                {selectedAirport.owner && (
+                                  <div className={cn("p-2.5 rounded-lg border col-span-2", theme === 'dark' ? "bg-slate-900/50 border-slate-700" : "bg-slate-50 border-slate-100")}>
+                                    <p className="text-[9px] uppercase tracking-wider text-slate-500 mb-1">{lang === 'th' ? 'เจ้าของ / หน่วยงาน' : 'Owner / Operator'}</p>
+                                    <p className={cn("text-xs font-medium truncate", theme === 'dark' ? "text-slate-300" : "text-slate-700")}>
+                                      {lang === 'th' ? selectedAirport.ownerTh : selectedAirport.owner}
+                                    </p>
+                                  </div>
+                                )}
+                              </div>
+
+                              <a 
+                                href={lang === 'th' ? selectedAirport.wikiUrlTh : selectedAirport.wikiUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={cn(
+                                  "flex items-center justify-center gap-2 w-full py-2 rounded-lg text-xs font-medium transition-colors",
+                                  theme === 'dark' 
+                                    ? "bg-indigo-600 hover:bg-indigo-500 text-white" 
+                                    : "bg-indigo-600 hover:bg-indigo-700 text-white"
+                                )}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <span>{lang === 'th' ? 'ดูข้อมูลเพิ่มเติม' : 'More Info'}</span>
+                                <ArrowUpRight size={12} />
+                              </a>
+                            </div>
+                          </motion.div>
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* Hover Tooltip */}
+                  {hoveredAirport && hoveredAirport?.code !== selectedAirport?.code && (() => {
+                    const { x, y } = project(hoveredAirport.lat, hoveredAirport.lon);
+                    const scale = transformState.scale || 1;
+                    const leftSideAirports = ['VTUI', 'VTUW', 'VTUV', 'VTUO', 'VTUU'];
+                    const isLeftSide = leftSideAirports.includes(hoveredAirport.code);
+                    
+                    return (
+                      <div
+                        className="absolute z-50 pointer-events-none"
+                        style={{
+                          left: x,
+                          top: y,
+                          transform: isLeftSide 
+                            ? `translate(calc(-100% - ${15 / scale}px), -50%) scale(${1 / scale})`
+                            : `translate(${15 / scale}px, -50%) scale(${1 / scale})`,
+                          transformOrigin: isLeftSide ? 'right center' : 'left center'
+                        }}
+                      >
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.95 }}
+                          transition={{ duration: 0.15 }}
+                          className={cn(
+                            "px-3 py-2 rounded-lg border shadow-lg whitespace-nowrap",
+                            theme === 'dark' ? "bg-slate-800 border-slate-700 text-slate-200" : "bg-white border-slate-200 text-slate-800"
+                          )}
+                        >
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className={cn(
+                              "w-1.5 h-1.5 rounded-full",
+                              hoveredAirport.category === 'AOT' ? "bg-red-600" :
+                              hoveredAirport.category === 'ARMY' ? "bg-green-800" :
+                              hoveredAirport.category === 'NAVY' ? "bg-blue-700" :
+                              hoveredAirport.category === 'AIRFORCE' ? "bg-sky-400" :
+                              hoveredAirport.category === 'PRIVATE' ? "bg-purple-500" : "bg-amber-500"
+                            )} />
+                            <span className="text-[10px] font-bold uppercase tracking-wider opacity-70">
+                              {hoveredAirport.iata} / {hoveredAirport.code}
+                            </span>
+                          </div>
+                          <p className="text-sm font-semibold">
+                            {lang === 'th' ? hoveredAirport.nameTh : hoveredAirport.name}
+                          </p>
+                          <p className="text-[10px] opacity-70 mt-0.5">
+                            {lang === 'th' ? hoveredAirport.locationTh : hoveredAirport.location}
+                          </p>
+                        </motion.div>
+                      </div>
+                    );
+                  })()}
+                  </AnimatePresence>
                 </div>
               </TransformComponent>
             </div>
@@ -673,7 +1540,7 @@ const ThailandMap = ({ airports, lang, theme }: { airports: any[], lang: string,
         theme === 'dark' ? "bg-slate-800/90 border-slate-700" : "bg-white/90 border-slate-200"
       )}>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-indigo-500" />
+          <div className="w-2 h-2 rounded-full bg-red-600" />
           <span className={cn("font-medium", theme === 'dark' ? "text-slate-300" : "text-slate-600")}>
             {lang === 'th' ? 'บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)' : 'Airports of Thailand (AOT)'}
           </span>
@@ -685,9 +1552,33 @@ const ThailandMap = ({ airports, lang, theme }: { airports: any[], lang: string,
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-red-500" />
+          <div className="w-2 h-2 rounded-full bg-green-800" />
           <span className={cn("font-medium", theme === 'dark' ? "text-slate-300" : "text-slate-600")}>
             {lang === 'th' ? 'กองทัพบก' : 'Royal Thai Army'}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-blue-700" />
+          <span className={cn("font-medium", theme === 'dark' ? "text-slate-300" : "text-slate-600")}>
+            {lang === 'th' ? 'กองทัพเรือ' : 'Royal Thai Navy'}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-sky-400" />
+          <span className={cn("font-medium", theme === 'dark' ? "text-slate-300" : "text-slate-600")}>
+            {lang === 'th' ? 'กองทัพอากาศ' : 'Royal Thai Air Force'}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-purple-500" />
+          <span className={cn("font-medium", theme === 'dark' ? "text-slate-300" : "text-slate-600")}>
+            {lang === 'th' ? 'เอกชน' : 'Private'}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-stone-800" />
+          <span className={cn("font-medium", theme === 'dark' ? "text-slate-300" : "text-slate-600")}>
+            {lang === 'th' ? 'ท่าอากาศยานที่เลิกใช้แล้ว' : 'Historical / Closed'}
           </span>
         </div>
       </div>
@@ -731,7 +1622,7 @@ const StatCard = ({ title, value, subValue, icon: Icon, trend, theme }: any) => 
         theme === 'dark' ? "text-slate-400" : "text-slate-500"
       )}>{title}</p>
       <h3 className={cn(
-        "text-3xl font-bold mt-1",
+        "text-2xl md:text-3xl font-bold mt-1",
         theme === 'dark' ? "text-white" : "text-slate-900"
       )}>{value}</h3>
       {subValue && <p className={cn(
@@ -778,6 +1669,16 @@ export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const t = TRANSLATIONS[lang];
+
+  const DIRECTORY_SECTIONS = [
+    { id: 'AOT', titleKey: 'dir_title', descKey: 'dir_desc', logo: LOGO_MAP.AOT, color: 'indigo' },
+    { id: 'DOA', titleKey: 'dir_doa_title', descKey: 'dir_doa_desc', logo: LOGO_MAP.DOA, color: 'amber' },
+    { id: 'ARMY', titleKey: 'dir_army_title', descKey: 'dir_army_desc', logo: LOGO_MAP.ARMY, color: 'red' },
+    { id: 'NAVY', titleKey: 'dir_navy_title', descKey: 'dir_navy_desc', logo: LOGO_MAP.NAVY, color: 'blue' },
+    { id: 'AIRFORCE', titleKey: 'dir_airforce_title', descKey: 'dir_airforce_desc', logo: LOGO_MAP.AIRFORCE, color: 'sky' },
+    { id: 'PRIVATE', titleKey: 'dir_private_title', descKey: 'dir_private_desc', logo: LOGO_MAP.PRIVATE, color: 'purple' },
+    { id: 'CLOSED', titleKey: 'dir_closed_title', descKey: 'dir_closed_desc', logo: LOGO_MAP.CLOSED, color: 'stone' },
+  ];
 
   const isFeb = selectedMonth === 'Feb 26';
   const isJan = selectedMonth === 'Jan 26';
@@ -875,6 +1776,7 @@ export default function App() {
         <div className="hidden md:flex items-center gap-8">
           {[
             { id: 'overview', label: t.nav_overview },
+            { id: 'map', label: t.nav_map },
             { id: 'airports', label: t.nav_airports },
             { id: 'operations', label: t.nav_operations },
             { id: 'analytics', label: t.nav_analytics }
@@ -951,8 +1853,53 @@ export default function App() {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-24 pb-12 px-6 max-w-7xl mx-auto">
+      <main className={cn(
+        "transition-all duration-300 mx-auto",
+        activeTab === 'map' 
+          ? "pt-20 px-0 pb-0 max-w-full min-h-screen" 
+          : "pt-24 px-6 pb-12 max-w-7xl"
+      )}>
         <AnimatePresence mode="wait">
+          {activeTab === 'map' && (
+            <motion.div 
+              key="map"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="min-h-screen"
+            >
+              <div className={cn(
+                "w-full min-h-screen flex flex-col",
+                theme === 'dark' ? "bg-slate-900" : "bg-slate-50"
+              )}>
+                <div className={cn(
+                  "absolute top-24 left-6 z-10 flex items-center gap-2 backdrop-blur-md p-2 rounded-lg border shadow-sm transition-colors",
+                  theme === 'dark' ? "bg-slate-800/80 border-slate-700" : "bg-white/80 border-slate-200"
+                )}>
+                  <div className={cn(
+                    "p-1.5 rounded-md",
+                    theme === 'dark' ? "bg-indigo-500/20 text-indigo-400" : "bg-indigo-50 text-indigo-600"
+                  )}>
+                    <MapIcon className="w-4 h-4" />
+                  </div>
+                  <h4 className={cn(
+                    "font-semibold",
+                    theme === 'dark' ? "text-slate-200" : "text-slate-800"
+                  )}>{t.airport_network_title}</h4>
+                </div>
+                <div className="flex-1">
+                  <ThailandMap 
+                    airports={AIRPORTS} 
+                    lang={lang} 
+                    theme={theme} 
+                    className="max-h-none aspect-auto" 
+                    containerClassName="rounded-none border-0 bg-transparent"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {activeTab === 'overview' && (
             <motion.div 
               key="overview"
@@ -961,10 +1908,9 @@ export default function App() {
               exit={{ opacity: 0 }}
               className="space-y-8"
             >
-              {/* Header */}
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                  <h2 className={cn("text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.dashboard_title}</h2>
+                  <h2 className={cn("text-2xl md:text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.dashboard_title}</h2>
                   <p className={cn("mt-1", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{t.dashboard_desc}</p>
                 </div>
                 <div className="flex gap-2">
@@ -1130,14 +2076,16 @@ export default function App() {
                       theme === 'dark' ? "text-slate-400" : "text-slate-500"
                     )}>{t.airport_network_desc}</p>
                     
-                    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                       {/* AOT Column */}
                       <div className="space-y-4">
-                        <h4 className={cn("text-[10px] font-bold uppercase tracking-widest mb-4", theme === 'dark' ? "text-slate-500" : "text-slate-400")}>AOT</h4>
+                        <h4 className={cn("text-[10px] font-bold uppercase tracking-widest mb-4", theme === 'dark' ? "text-slate-500" : "text-slate-400")}>
+                          {lang === 'th' ? 'บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)' : 'Airports of Thailand (AOT)'}
+                        </h4>
                         {AIRPORTS.filter(a => a.category === 'AOT').slice(0, 3).map((airport) => (
                           <a 
-                            key={airport.code} 
-                            href={lang === 'th' ? airport.wikiUrlTh : airport.wikiUrl}
+                            key={airport.id} 
+                            href={airport.wikiUrlTh}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-between group cursor-pointer"
@@ -1145,7 +2093,7 @@ export default function App() {
                             <div className="flex items-center gap-3">
                               <div className={cn(
                                 "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
-                                theme === 'dark' ? "bg-slate-700 group-hover:bg-indigo-500" : "bg-slate-100 group-hover:bg-indigo-500"
+                                theme === 'dark' ? "bg-slate-700 group-hover:bg-red-600" : "bg-slate-100 group-hover:bg-red-600"
                               )}>
                                 <MapPin className={cn(
                                   "w-4 h-4 transition-colors",
@@ -1155,14 +2103,14 @@ export default function App() {
                               <div>
                                 <p className={cn(
                                   "text-sm font-semibold transition-colors", 
-                                  theme === 'dark' ? "text-slate-200 group-hover:text-white" : "text-slate-800 group-hover:text-indigo-600"
-                                )}>{lang === 'th' ? airport.nameTh : airport.name}</p>
-                                <p className="text-[10px] text-slate-500">{airport.iata} / {airport.code} • {lang === 'th' ? airport.locationTh : airport.location}</p>
+                                  theme === 'dark' ? "text-slate-200 group-hover:text-white" : "text-slate-800 group-hover:text-red-600"
+                                )}>{lang === 'th' ? airport.nameTh : airport.nameEn}</p>
+                                <p className="text-[10px] text-slate-500">{airport.iata || '-'} / {airport.code || '-'} • {lang === 'th' ? airport.locationTh : airport.locationEn}</p>
                               </div>
                             </div>
                             <ChevronRight className={cn(
                               "w-4 h-4 transition-colors", 
-                              theme === 'dark' ? "text-slate-600 group-hover:text-white" : "text-slate-400 group-hover:text-indigo-600"
+                              theme === 'dark' ? "text-slate-600 group-hover:text-white" : "text-slate-400 group-hover:text-red-600"
                             )} />
                           </a>
                         ))}
@@ -1170,11 +2118,13 @@ export default function App() {
 
                       {/* DOA Column */}
                       <div className="space-y-4">
-                        <h4 className={cn("text-[10px] font-bold uppercase tracking-widest mb-4", theme === 'dark' ? "text-slate-500" : "text-slate-400")}>DOA</h4>
+                        <h4 className={cn("text-[10px] font-bold uppercase tracking-widest mb-4", theme === 'dark' ? "text-slate-500" : "text-slate-400")}>
+                          {lang === 'th' ? 'กรมท่าอากาศยาน' : 'Department of Airports (DOA)'}
+                        </h4>
                         {AIRPORTS.filter(a => a.category === 'DOA').slice(0, 3).map((airport) => (
                           <a 
-                            key={airport.code} 
-                            href={lang === 'th' ? airport.wikiUrlTh : airport.wikiUrl}
+                            key={airport.id} 
+                            href={airport.wikiUrlTh}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-between group cursor-pointer"
@@ -1193,8 +2143,8 @@ export default function App() {
                                 <p className={cn(
                                   "text-sm font-semibold transition-colors", 
                                   theme === 'dark' ? "text-slate-200 group-hover:text-white" : "text-slate-800 group-hover:text-amber-600"
-                                )}>{lang === 'th' ? airport.nameTh : airport.name}</p>
-                                <p className="text-[10px] text-slate-500">{airport.iata} / {airport.code} • {lang === 'th' ? airport.locationTh : airport.location}</p>
+                                )}>{lang === 'th' ? airport.nameTh : airport.nameEn}</p>
+                                <p className="text-[10px] text-slate-500">{airport.iata || '-'} / {airport.code || '-'} • {lang === 'th' ? airport.locationTh : airport.locationEn}</p>
                               </div>
                             </div>
                             <ChevronRight className={cn(
@@ -1205,41 +2155,77 @@ export default function App() {
                         ))}
                       </div>
 
-                      {/* Army Column */}
+                      {/* Other Agencies Column */}
                       <div className="space-y-4">
-                        <h4 className={cn("text-[10px] font-bold uppercase tracking-widest mb-4", theme === 'dark' ? "text-slate-500" : "text-slate-400")}>ARMY</h4>
-                        {AIRPORTS.filter(a => a.category === 'ARMY').slice(0, 3).map((airport) => (
-                          <a 
-                            key={airport.code} 
-                            href={lang === 'th' ? airport.wikiUrlTh : airport.wikiUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between group cursor-pointer"
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className={cn(
-                                "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
-                                theme === 'dark' ? "bg-slate-700 group-hover:bg-red-500" : "bg-slate-100 group-hover:bg-red-500"
-                              )}>
-                                <MapPin className={cn(
-                                  "w-4 h-4 transition-colors",
-                                  theme === 'dark' ? "text-slate-400 group-hover:text-white" : "text-slate-500 group-hover:text-white"
-                                )} />
+                        <h4 className={cn("text-[10px] font-bold uppercase tracking-widest mb-4", theme === 'dark' ? "text-slate-500" : "text-slate-400")}>
+                          {lang === 'th' ? 'หน่วยงานอื่นๆ' : 'OTHERS AUTHORITY'}
+                        </h4>
+                        {[
+                          AIRPORTS.find(a => a.category === 'NAVY'),
+                          AIRPORTS.find(a => a.category === 'ARMY'),
+                          AIRPORTS.find(a => a.category === 'AIRFORCE'),
+                          AIRPORTS.find(a => a.category === 'PRIVATE'),
+                          AIRPORTS.find(a => a.category === 'CLOSED')
+                        ].filter(Boolean).slice(0, 4).map((airport: any) => {
+                          const isArmy = airport.category === 'ARMY';
+                          const isNavy = airport.category === 'NAVY';
+                          const isAirForce = airport.category === 'AIRFORCE';
+                          const isPrivate = airport.category === 'PRIVATE';
+                          const isClosed = airport.category === 'CLOSED';
+                          
+                          let hoverColorClass = "group-hover:bg-slate-500";
+                          let textColorClass = "group-hover:text-slate-600";
+                          
+                          if (isArmy) {
+                            hoverColorClass = "group-hover:bg-red-800";
+                            textColorClass = "group-hover:text-red-800";
+                          } else if (isNavy) {
+                            hoverColorClass = "group-hover:bg-blue-600";
+                            textColorClass = "group-hover:text-blue-700";
+                          } else if (isAirForce) {
+                            hoverColorClass = "group-hover:bg-sky-300";
+                            textColorClass = "group-hover:text-sky-500";
+                          } else if (isPrivate) {
+                            hoverColorClass = "group-hover:bg-purple-500";
+                            textColorClass = "group-hover:text-purple-600";
+                          } else if (isClosed) {
+                            hoverColorClass = "group-hover:bg-stone-500";
+                            textColorClass = "group-hover:text-stone-600";
+                          }
+
+                          return (
+                            <a 
+                              key={airport.id} 
+                              href={airport.wikiUrlTh}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-between group cursor-pointer"
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className={cn(
+                                  "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
+                                  theme === 'dark' ? `bg-slate-700 ${hoverColorClass}` : `bg-slate-100 ${hoverColorClass}`
+                                )}>
+                                  <MapPin className={cn(
+                                    "w-4 h-4 transition-colors",
+                                    theme === 'dark' ? "text-slate-400 group-hover:text-white" : "text-slate-500 group-hover:text-white"
+                                  )} />
+                                </div>
+                                <div>
+                                  <p className={cn(
+                                    "text-sm font-semibold transition-colors", 
+                                    theme === 'dark' ? "text-slate-200 group-hover:text-white" : `text-slate-800 ${textColorClass}`
+                                  )}>{lang === 'th' ? airport.nameTh : airport.nameEn}</p>
+                                  <p className="text-[10px] text-slate-500">{airport.iata || '-'} / {airport.code || '-'} • {lang === 'th' ? airport.locationTh : airport.locationEn}</p>
+                                </div>
                               </div>
-                              <div>
-                                <p className={cn(
-                                  "text-sm font-semibold transition-colors", 
-                                  theme === 'dark' ? "text-slate-200 group-hover:text-white" : "text-slate-800 group-hover:text-red-600"
-                                )}>{lang === 'th' ? airport.nameTh : airport.name}</p>
-                                <p className="text-[10px] text-slate-500">{airport.iata} / {airport.code} • {lang === 'th' ? airport.locationTh : airport.location}</p>
-                              </div>
-                            </div>
-                            <ChevronRight className={cn(
-                              "w-4 h-4 transition-colors", 
-                              theme === 'dark' ? "text-slate-600 group-hover:text-white" : "text-slate-400 group-hover:text-red-600"
-                            )} />
-                          </a>
-                        ))}
+                              <ChevronRight className={cn(
+                                "w-4 h-4 transition-colors", 
+                                theme === 'dark' ? "text-slate-600 group-hover:text-white" : `text-slate-400 ${textColorClass}`
+                              )} />
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
@@ -1339,280 +2325,122 @@ export default function App() {
               exit={{ opacity: 0, x: -20 }}
               className="space-y-8"
             >
-              <div className="flex justify-between items-end">
-                <div>
-                  <div className="flex items-center gap-4 mb-2">
-                    <img 
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Airports_of_Thailand_Logo.svg/3840px-Airports_of_Thailand_Logo.svg.png" 
-                      alt="AOT Logo" 
-                      className="h-12 w-auto object-contain"
-                      referrerPolicy="no-referrer"
-                    />
-                    <h2 className={cn("text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.dir_title}</h2>
-                  </div>
-                  <p className={cn("mt-1", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{t.dir_desc}</p>
-                </div>
-              </div>
+              {DIRECTORY_SECTIONS.map((section) => {
+                const sectionAirports = AIRPORTS.filter(a => a.category === section.id);
+                if (sectionAirports.length === 0) return null;
 
-              <div className={cn(
-                "rounded-2xl border overflow-hidden transition-all duration-300",
-                theme === 'dark' ? "bg-slate-800 border-slate-700 shadow-none" : "bg-white border-slate-200 shadow-sm"
-              )}>
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className={cn(
-                      "border-b transition-colors",
-                      theme === 'dark' ? "bg-slate-800/50 border-slate-700" : "bg-slate-50 border-slate-200"
-                    )}>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_iata}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_icao}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_name}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_location}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_type}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">{t.table_actions}</th>
-                    </tr>
-                  </thead>
-                  <tbody className={cn("divide-y", theme === 'dark' ? "divide-slate-700" : "divide-slate-100")}>
-                    {AIRPORTS.filter(a => a.category === 'AOT').map((airport) => (
-                      <tr key={airport.code} className={cn(
-                        "transition-colors group",
-                        theme === 'dark' ? "hover:bg-slate-700/50" : "hover:bg-slate-50"
-                      )}>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "font-mono text-sm font-bold px-2 py-1 rounded transition-colors",
-                            theme === 'dark' ? "text-slate-300 bg-slate-700" : "text-slate-600 bg-slate-100"
-                          )}>
-                            {airport.iata}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "font-mono text-sm font-bold px-2 py-1 rounded transition-colors",
-                            theme === 'dark' ? "text-indigo-400 bg-indigo-500/10" : "text-indigo-600 bg-indigo-50"
-                          )}>
-                            {airport.code}
-                          </span>
-                        </td>
-                        <td className={cn("px-6 py-4 font-medium transition-colors", theme === 'dark' ? "text-slate-200" : "text-slate-900")}>{lang === 'th' ? airport.nameTh : airport.name}</td>
-                        <td className={cn("px-6 py-4 text-sm transition-colors", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{lang === 'th' ? airport.locationTh : airport.location}</td>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "text-xs font-medium px-2 py-1 rounded-full transition-colors",
-                            theme === 'dark' ? "bg-slate-700 text-slate-400" : "bg-slate-100 text-slate-600"
-                          )}>
-                            {airport.type}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 text-right">
-                          {airport.wikiUrl ? (
-                            <a 
-                              href={lang === 'th' ? airport.wikiUrlTh : airport.wikiUrl} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className={cn(
-                                "font-semibold text-sm transition-colors",
-                                theme === 'dark' ? "text-indigo-400 hover:text-indigo-300" : "text-indigo-600 hover:text-indigo-800"
-                              )}
-                            >
-                              {t.table_details}
-                            </a>
-                          ) : (
-                            <button className={cn(
-                              "font-semibold text-sm transition-colors",
-                              theme === 'dark' ? "text-indigo-400 hover:text-indigo-300" : "text-indigo-600 hover:text-indigo-800"
-                            )}>{t.table_details}</button>
+                return (
+                  <div key={section.id} className="space-y-6">
+                    <div className="flex justify-between items-end">
+                      <div>
+                        <div className="flex items-center gap-4 mb-2">
+                          {section.logo && (
+                            <img 
+                              src={section.logo} 
+                              alt={`${section.id} Logo`} 
+                              className="h-12 w-auto object-contain"
+                              referrerPolicy="no-referrer"
+                            />
                           )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                          <h2 className={cn("text-2xl md:text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>
+                            {(t as any)[section.titleKey]}
+                          </h2>
+                        </div>
+                        <p className={cn("mt-1", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>
+                          {(t as any)[section.descKey]}
+                        </p>
+                      </div>
+                    </div>
 
-              {/* DOA Section */}
-              <div className="flex justify-between items-end">
-                <div>
-                  <div className="flex items-center gap-4 mb-2">
-                    <img 
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Seal_of_the_Department_of_Airports_of_Thailand.svg/1920px-Seal_of_the_Department_of_Airports_of_Thailand.svg.png" 
-                      alt="DOA Seal" 
-                      className="h-12 w-auto object-contain"
-                      referrerPolicy="no-referrer"
-                    />
-                    <h2 className={cn("text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.dir_doa_title}</h2>
-                  </div>
-                  <p className={cn("mt-1", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{t.dir_doa_desc}</p>
-                </div>
-              </div>
-
-              <div className={cn(
-                "rounded-2xl border overflow-hidden transition-all duration-300",
-                theme === 'dark' ? "bg-slate-800 border-slate-700 shadow-none" : "bg-white border-slate-200 shadow-sm"
-              )}>
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className={cn(
-                      "border-b transition-colors",
-                      theme === 'dark' ? "bg-slate-800/50 border-slate-700" : "bg-slate-50 border-slate-200"
+                    <div className={cn(
+                      "rounded-2xl border overflow-hidden transition-all duration-300",
+                      theme === 'dark' ? "bg-slate-800 border-slate-700 shadow-none" : "bg-white border-slate-200 shadow-sm"
                     )}>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_iata}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_icao}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_name}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_location}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_type}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">{t.table_actions}</th>
-                    </tr>
-                  </thead>
-                  <tbody className={cn("divide-y", theme === 'dark' ? "divide-slate-700" : "divide-slate-100")}>
-                    {AIRPORTS.filter(a => a.category === 'DOA').map((airport) => (
-                      <tr key={airport.code} className={cn(
-                        "transition-colors group",
-                        theme === 'dark' ? "hover:bg-slate-700/50" : "hover:bg-slate-50"
-                      )}>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "font-mono text-sm font-bold px-2 py-1 rounded transition-colors",
-                            theme === 'dark' ? "text-slate-300 bg-slate-700" : "text-slate-600 bg-slate-100"
+                      <table className="w-full text-left border-collapse">
+                        <thead>
+                          <tr className={cn(
+                            "border-b transition-colors",
+                            theme === 'dark' ? "bg-slate-800/50 border-slate-700" : "bg-slate-50 border-slate-200"
                           )}>
-                            {airport.iata}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "font-mono text-sm font-bold px-2 py-1 rounded transition-colors",
-                            theme === 'dark' ? "text-amber-400 bg-amber-500/10" : "text-amber-600 bg-amber-50"
-                          )}>
-                            {airport.code}
-                          </span>
-                        </td>
-                        <td className={cn("px-6 py-4 font-medium transition-colors", theme === 'dark' ? "text-slate-200" : "text-slate-900")}>{lang === 'th' ? airport.nameTh : airport.name}</td>
-                        <td className={cn("px-6 py-4 text-sm transition-colors", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{lang === 'th' ? airport.locationTh : airport.location}</td>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "text-xs font-medium px-2 py-1 rounded-full transition-colors",
-                            theme === 'dark' ? "bg-slate-700 text-slate-400" : "bg-slate-100 text-slate-600"
-                          )}>
-                            {airport.type}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 text-right">
-                          {airport.wikiUrl ? (
-                            <a 
-                              href={lang === 'th' ? airport.wikiUrlTh : airport.wikiUrl} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className={cn(
-                                "font-semibold text-sm transition-colors",
-                                theme === 'dark' ? "text-amber-400 hover:text-amber-300" : "text-amber-600 hover:text-amber-800"
-                              )}
-                            >
-                              {t.table_details}
-                            </a>
-                          ) : (
-                            <button className={cn(
-                              "font-semibold text-sm transition-colors",
-                              theme === 'dark' ? "text-amber-400 hover:text-amber-300" : "text-amber-600 hover:text-amber-800"
-                            )}>{t.table_details}</button>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* Army Section */}
-              <div className="flex justify-between items-end">
-                <div>
-                  <div className="flex items-center gap-4 mb-2">
-                    <img 
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Seal_of_the_Royal_Thai_Army.svg/1200px-Seal_of_the_Royal_Thai_Army.svg.png" 
-                      alt="Army Seal" 
-                      className="h-12 w-auto object-contain"
-                      referrerPolicy="no-referrer"
-                    />
-                    <h2 className={cn("text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.dir_army_title}</h2>
+                            <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_iata}</th>
+                            <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_icao}</th>
+                            <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_name}</th>
+                            <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_location}</th>
+                            <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_type}</th>
+                            <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">{t.table_actions}</th>
+                          </tr>
+                        </thead>
+                        <tbody className={cn("divide-y", theme === 'dark' ? "divide-slate-700" : "divide-slate-100")}>
+                          {sectionAirports.map((airport) => (
+                            <tr key={airport.id} className={cn(
+                              "transition-colors group",
+                              theme === 'dark' ? "hover:bg-slate-700/50" : "hover:bg-slate-50"
+                            )}>
+                              <td className="px-6 py-4">
+                                <span className={cn(
+                                  "font-mono text-sm font-bold px-2 py-1 rounded transition-colors",
+                                  theme === 'dark' ? "text-slate-300 bg-slate-700" : "text-slate-600 bg-slate-100"
+                                )}>
+                                  {airport.iata || '-'}
+                                </span>
+                              </td>
+                              <td className="px-6 py-4">
+                                <span className={cn(
+                                  "font-mono text-sm font-bold px-2 py-1 rounded transition-colors",
+                                  section.color === 'indigo' ? (theme === 'dark' ? "text-indigo-400 bg-indigo-500/10" : "text-indigo-600 bg-indigo-50") :
+                                  section.color === 'amber' ? (theme === 'dark' ? "text-amber-400 bg-amber-500/10" : "text-amber-600 bg-amber-50") :
+                                  section.color === 'red' ? (theme === 'dark' ? "text-red-400 bg-red-500/10" : "text-red-600 bg-red-50") :
+                                  section.color === 'blue' ? (theme === 'dark' ? "text-blue-400 bg-blue-500/10" : "text-blue-600 bg-blue-50") :
+                                  section.color === 'sky' ? (theme === 'dark' ? "text-sky-400 bg-sky-500/10" : "text-sky-600 bg-sky-50") :
+                                  section.color === 'purple' ? (theme === 'dark' ? "text-purple-400 bg-purple-500/10" : "text-purple-600 bg-purple-50") :
+                                  (theme === 'dark' ? "text-stone-400 bg-stone-500/10" : "text-stone-600 bg-stone-50")
+                                )}>
+                                  {airport.code || '-'}
+                                </span>
+                              </td>
+                              <td className={cn("px-6 py-4 font-medium transition-colors", theme === 'dark' ? "text-slate-200" : "text-slate-900")}>{lang === 'th' ? airport.nameTh : airport.nameEn}</td>
+                              <td className={cn("px-6 py-4 text-sm transition-colors", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{lang === 'th' ? airport.locationTh : airport.locationEn}</td>
+                              <td className="px-6 py-4">
+                                <span className={cn(
+                                  "text-xs font-medium px-2 py-1 rounded-full transition-colors",
+                                  theme === 'dark' ? "bg-slate-700 text-slate-400" : "bg-slate-100 text-slate-600"
+                                )}>
+                                  {airport.category}
+                                </span>
+                              </td>
+                              <td className="px-6 py-4 text-right">
+                                {airport.wikiUrlTh ? (
+                                  <a 
+                                    href={airport.wikiUrlTh} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className={cn(
+                                      "font-semibold text-sm transition-colors",
+                                      section.color === 'indigo' ? (theme === 'dark' ? "text-indigo-400 hover:text-indigo-300" : "text-indigo-600 hover:text-indigo-800") :
+                                      section.color === 'amber' ? (theme === 'dark' ? "text-amber-400 hover:text-amber-300" : "text-amber-600 hover:text-amber-800") :
+                                      section.color === 'red' ? (theme === 'dark' ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-800") :
+                                      section.color === 'blue' ? (theme === 'dark' ? "text-blue-400 hover:text-blue-300" : "text-blue-600 hover:text-blue-800") :
+                                      section.color === 'sky' ? (theme === 'dark' ? "text-sky-400 hover:text-sky-300" : "text-sky-600 hover:text-sky-800") :
+                                      section.color === 'purple' ? (theme === 'dark' ? "text-purple-400 hover:text-purple-300" : "text-purple-600 hover:text-purple-800") :
+                                      (theme === 'dark' ? "text-stone-400 hover:text-stone-300" : "text-stone-600 hover:text-stone-800")
+                                    )}
+                                  >
+                                    {t.table_details}
+                                  </a>
+                                ) : (
+                                  <span className="text-slate-400 text-sm">-</span>
+                                )}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                  <p className={cn("mt-1", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{t.dir_army_desc}</p>
-                </div>
-              </div>
+                );
+              })}
 
-              <div className={cn(
-                "rounded-2xl border overflow-hidden transition-all duration-300",
-                theme === 'dark' ? "bg-slate-800 border-slate-700 shadow-none" : "bg-white border-slate-200 shadow-sm"
-              )}>
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className={cn(
-                      "border-b transition-colors",
-                      theme === 'dark' ? "bg-slate-800/50 border-slate-700" : "bg-slate-50 border-slate-200"
-                    )}>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_iata}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_icao}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_name}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_location}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">{t.table_type}</th>
-                      <th className="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">{t.table_actions}</th>
-                    </tr>
-                  </thead>
-                  <tbody className={cn("divide-y", theme === 'dark' ? "divide-slate-700" : "divide-slate-100")}>
-                    {AIRPORTS.filter(a => a.category === 'ARMY').map((airport) => (
-                      <tr key={airport.code} className={cn(
-                        "transition-colors group",
-                        theme === 'dark' ? "hover:bg-slate-700/50" : "hover:bg-slate-50"
-                      )}>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "font-mono text-sm font-bold px-2 py-1 rounded transition-colors",
-                            theme === 'dark' ? "text-slate-300 bg-slate-700" : "text-slate-600 bg-slate-100"
-                          )}>
-                            {airport.iata}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "font-mono text-sm font-bold px-2 py-1 rounded transition-colors",
-                            theme === 'dark' ? "text-red-400 bg-red-500/10" : "text-red-600 bg-red-50"
-                          )}>
-                            {airport.code}
-                          </span>
-                        </td>
-                        <td className={cn("px-6 py-4 font-medium transition-colors", theme === 'dark' ? "text-slate-200" : "text-slate-900")}>{lang === 'th' ? airport.nameTh : airport.name}</td>
-                        <td className={cn("px-6 py-4 text-sm transition-colors", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{lang === 'th' ? airport.locationTh : airport.location}</td>
-                        <td className="px-6 py-4">
-                          <span className={cn(
-                            "text-xs font-medium px-2 py-1 rounded-full transition-colors",
-                            theme === 'dark' ? "bg-slate-700 text-slate-400" : "bg-slate-100 text-slate-600"
-                          )}>
-                            {airport.type}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 text-right">
-                          {airport.wikiUrl ? (
-                            <a 
-                              href={lang === 'th' ? airport.wikiUrlTh : airport.wikiUrl} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className={cn(
-                                "font-semibold text-sm transition-colors",
-                                theme === 'dark' ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-800"
-                              )}
-                            >
-                              {t.table_details}
-                            </a>
-                          ) : (
-                            <button className={cn(
-                              "font-semibold text-sm transition-colors",
-                              theme === 'dark' ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-800"
-                            )}>{t.table_details}</button>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              {/* Redundant sections removed */}
             </motion.div>
           )}
 
@@ -1627,7 +2455,7 @@ export default function App() {
               {/* Header with Month Selection */}
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                  <h2 className={cn("text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.nav_operations}</h2>
+                  <h2 className={cn("text-2xl md:text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.nav_operations}</h2>
                   <p className={cn("mt-1", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{t.ops_insights_title}</p>
                 </div>
                 <div className="flex gap-2">
@@ -1751,7 +2579,7 @@ export default function App() {
               {/* Header with Month Selection */}
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                  <h2 className={cn("text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.nav_analytics}</h2>
+                  <h2 className={cn("text-2xl md:text-3xl font-bold", theme === 'dark' ? "text-white" : "text-slate-900")}>{t.nav_analytics}</h2>
                   <p className={cn("mt-1", theme === 'dark' ? "text-slate-400" : "text-slate-500")}>{t.dashboard_desc}</p>
                 </div>
                 <div className="flex gap-2">
@@ -1973,6 +2801,7 @@ export default function App() {
               <h4 className={cn("text-xs font-bold uppercase tracking-widest mb-2", theme === 'dark' ? "text-slate-500" : "text-slate-400")}>Quick Links</h4>
               {[
                 { id: 'overview', label: t.nav_overview },
+                { id: 'map', label: t.nav_map },
                 { id: 'airports', label: t.nav_airports },
                 { id: 'operations', label: t.nav_operations },
                 { id: 'analytics', label: t.nav_analytics }
